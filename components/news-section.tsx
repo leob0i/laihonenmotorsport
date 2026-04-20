@@ -6,27 +6,27 @@ import { Calendar, ArrowRight } from "lucide-react"
 export default function NewsSection() {
   const news = [
     {
-      title: "BFAJK&GB Launches Digital Economy Initiative",
+      title: "Kevaan rengassesonki alkaa",
       excerpt:
-        "New program aims to connect local tech talent with global opportunities through strategic partnerships and skill development.",
-      date: "March 15, 2024",
-      category: "Technology",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop",
+        "Varaa aikasi ajoissa kevaan rengasvaihtoon. Tarjoamme nopean ja ammattitaitoisen palvelun kilpailukykyiseen hintaan.",
+      date: "Maaliskuu 2024",
+      category: "Renkaat",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=200&fit=crop",
     },
     {
-      title: "Tourism Infrastructure Development Summit",
+      title: "Uudet diagnostiikkalaitteet kaytossa",
       excerpt:
-        "Forum brings together stakeholders to discuss sustainable tourism development and infrastructure improvements.",
-      date: "March 10, 2024",
-      category: "Tourism",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&h=200&fit=crop",
+        "Olemme investoineet uusimpaan diagnostiikkatekniikkaan. Nyt vikojen paikannus on entista nopeampaa ja tarkempaa.",
+      date: "Helmikuu 2024",
+      category: "Uutiset",
+      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=300&h=200&fit=crop",
     },
     {
-      title: "Ethical Business Practices Workshop Series",
-      excerpt: "Monthly workshops focusing on implementing Islamic business ethics in modern commercial practices.",
-      date: "March 5, 2024",
-      category: "Ethics",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=300&h=200&fit=crop",
+      title: "BMW & Mercedes erikoishuollot",
+      excerpt: "Laajennettu premium-merkkien huoltovalikoima. Alkuperaisosat ja erikoisosaaminen taattuna.",
+      date: "Tammikuu 2024",
+      category: "Palvelut",
+      image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=300&h=200&fit=crop",
     },
   ]
 
@@ -34,10 +34,10 @@ export default function NewsSection() {
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Latest News & Updates</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Ajankohtaista</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Stay informed about our latest initiatives, events, and developments in the business community
+            Pysy ajan tasalla korjaamon uutisista ja tarjouksista
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function NewsSection() {
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-4">{item.excerpt}</p>
                 <Button variant="ghost" className="p-0 h-auto text-emerald-600 hover:text-emerald-700">
-                  Read More
+                  Lue lisaa
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </CardContent>
@@ -80,7 +80,7 @@ export default function NewsSection() {
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-semibold px-8"
           >
-            View All News
+            Katso kaikki uutiset
           </Button>
         </div>
       </div>

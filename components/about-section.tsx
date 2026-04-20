@@ -1,44 +1,43 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Users, Target, Eye, Award } from "lucide-react"
+import { Wrench, Shield, Clock, Award, CircleDot } from "lucide-react"
 
 export default function AboutSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-emerald-50 to-blue-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Who We Are</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Tietoa meista</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            The Business Forum Azad Jammu & Kashmir & Gilgit Baltistan (BFAJK&GB) is a non-profit, non-political
-            alliance of visionary entrepreneurs, investors, economists, and professionals committed to economic
-            transformation grounded in Islamic ethics.
+            Leon Korjaamo on luotettava autokorjaamo, joka tarjoaa laadukasta huolto- ja korjauspalvelua kaikille
+            automerkeille. Ammattitaitoinen henkilokuntamme huolehtii autostasi kuin omastaan.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {[
             {
-              icon: Users,
-              title: "Leadership",
-              description: "Under Mr. Imran Aziz's visionary guidance",
+              icon: Wrench,
+              title: "Ammattitaito",
+              description: "Kokeneet mekaanikot palveluksessasi",
               color: "from-emerald-500 to-teal-500",
             },
             {
-              icon: Target,
-              title: "Mission",
-              description: "Ethical business ecosystem development",
+              icon: Shield,
+              title: "2v Takuu",
+              description: "Takuu kaikelle tyonteollemme",
               color: "from-blue-500 to-cyan-500",
             },
             {
-              icon: Eye,
-              title: "Vision",
-              description: "Shariah-compliant sustainable success",
+              icon: Clock,
+              title: "Nopea palvelu",
+              description: "Tehokas ja tasmallinen toimitus",
               color: "from-emerald-600 to-green-600",
             },
             {
               icon: Award,
-              title: "Values",
-              description: "Islamic ethics in commerce",
+              title: "Laatu",
+              description: "Alkuperaiset ja laadukkaat varaosat",
               color: "from-blue-600 to-indigo-600",
             },
           ].map((item, index) => (
@@ -62,18 +61,20 @@ export default function AboutSection() {
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Our Commitment</h3>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">Rengaspalvelut</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Tarjoamme kattavat rengaspalvelut ammattitaidolla. Rengastyot hintaan <span className="font-bold text-emerald-600">75€/tunti</span>.
+                Meidan kauttamme saat myos renkaat ja vanteet laajasta valikoimastamme.
+              </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                BFAJK&GB acts as a catalyst for entrepreneurship, inclusive policymaking, and sustainable regional
-                development. We champion an ethical business ecosystem through capacity-building, policy advocacy, and
-                strategic alliances.
+                Iso valikoima renkaita ja vanteita kaikille automerkeille. Autamme sinua loytamaan juuri oikeat renkaat autoosi.
               </p>
               <ul className="space-y-2">
                 {[
-                  "Capacity-building initiatives",
-                  "Policy advocacy programs",
-                  "Strategic alliance development",
-                  "Sustainable regional growth",
+                  "Rengasvaihdot ja -asennukset",
+                  "Renkaiden tasapainotus",
+                  "Vannevaurioiden korjaus",
+                  "Renkaat ja vanteet kauttamme",
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-500 to-blue-500"></div>
@@ -84,11 +85,17 @@ export default function AboutSection() {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop"
-                alt="Business collaboration"
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop"
+                alt="Rengaspalvelut"
                 className="rounded-lg shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/20 to-transparent rounded-lg"></div>
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                <div className="flex items-center gap-2">
+                  <CircleDot className="w-5 h-5 text-emerald-600" />
+                  <span className="font-bold text-gray-800">75€/tunti</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

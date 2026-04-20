@@ -8,10 +8,10 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "BFAJK&GB - Business Forum Azad Jammu & Kashmir & Gilgit Baltistan",
+  title: "Leon Korjaamo - Luotettava autokorjaamo",
   description:
-    "A non-profit alliance of visionary entrepreneurs committed to economic transformation grounded in Islamic ethics.",
-    generator: 'v0.app'
+    "Leon Korjaamo tarjoaa laadukasta autohuoltoa ja korjauspalvelua kaikille automerkeille. 2 vuoden takuu kaikelle tyolle. BMW ja Mercedes-Benz erikoishuollot.",
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="fi" className="bg-background">
       <body className={inter.className}>
         <Navigation />
         <main className="pt-16">{children}</main>

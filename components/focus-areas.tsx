@@ -1,41 +1,41 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Laptop, Pickaxe, Building, Palette } from "lucide-react"
+import { Wrench, Car, Settings, Gauge, Sparkles } from "lucide-react"
 
 export default function FocusAreas() {
   const areas = [
     {
-      icon: MapPin,
-      title: "Tourism & Hospitality",
-      description: "With over 1.2 million visitors annually, AJK offers immense tourism potential.",
-      stats: "1.2M+ Visitors",
+      icon: Wrench,
+      title: "Maaraaikaishuollot",
+      description: "Taydelliset maaraaikaishuollot kaikille automerkeille. BMW ja Mercedes-Benz huollot alk. 499€.",
+      stats: "Alk. 499€",
       color: "from-emerald-500 to-teal-500",
     },
     {
-      icon: Laptop,
-      title: "IT & Digital Economy",
-      description: "Young, tech-savvy population with improving internet infrastructure.",
-      stats: "Growing Tech Hub",
+      icon: Car,
+      title: "Korjaukset",
+      description: "Laajat korjauspalvelut jarruista moottoriin. Kaikelle tyolle 2 vuoden takuu.",
+      stats: "2v Takuu",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      icon: Pickaxe,
-      title: "Mining & Resources",
-      description: "Valuable yet underutilized mineral resources across the region.",
-      stats: "Rich Deposits",
+      icon: Settings,
+      title: "Varaosat",
+      description: "Alkuperaiset ja laadukkaat varaosat kilpailukykyiseen hintaan. Valmistajan takuu.",
+      stats: "Alkuperaisosat",
       color: "from-emerald-600 to-green-600",
     },
     {
-      icon: Building,
-      title: "Urban Development",
-      description: "Smart, sustainable development for accelerating urbanization.",
-      stats: "Smart Cities",
+      icon: Gauge,
+      title: "Diagnostiikka",
+      description: "Modernit diagnostiikkalaitteet vikojen nopeaan ja tarkkaan paikannukseen.",
+      stats: "Nykyaikainen",
       color: "from-blue-600 to-indigo-600",
     },
     {
-      icon: Palette,
-      title: "Creative Industries",
-      description: "Traditional crafts and agro-industries central to cultural heritage.",
-      stats: "Cultural Focus",
+      icon: Sparkles,
+      title: "Pesu ja hoito",
+      description: "Taydellinen auton pesu ja sisatilojen puhdistus. Pidä autosi uudenveroisena.",
+      stats: "Taysi palvelu",
       color: "from-teal-500 to-emerald-500",
     },
   ]
@@ -44,10 +44,10 @@ export default function FocusAreas() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Strategic Focus Areas</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Palvelumme</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Unlocking the economic potential of key regional sectors through targeted initiatives and partnerships
+            Tarjoamme kattavat autohuoltopalvelut ammattitaidolla ja laadukkailla varaosilla
           </p>
         </div>
 

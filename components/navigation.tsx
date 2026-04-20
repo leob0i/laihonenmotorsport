@@ -7,15 +7,12 @@ import { Menu, X } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Forums", href: "/forums" },
-    { name: "Membership", href: "/membership" },
-    { name: "Contact", href: "/contact" },
+    { name: "Etusivu", href: "/" },
+    { name: "Tietoa meista", href: "/about" },
+    { name: "Palvelut", href: "/services" },
+    { name: "Yhteystiedot", href: "/contact" },
   ]
 
   return (
@@ -25,9 +22,9 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">BF</span>
+              <span className="text-white font-bold text-lg">LK</span>
             </div>
-            <span className="font-bold text-xl text-gray-800">BFAJK&GB</span>
+            <span className="font-bold text-xl text-gray-800">Leon Korjaamo</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,9 +44,9 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Button
               className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white"
-              onClick={() => (window.location.href = "/membership")}
+              onClick={() => (window.location.href = "/contact")}
             >
-              Join Now
+              Varaa aika
             </Button>
           </div>
 
@@ -76,9 +73,9 @@ export default function Navigation() {
               <div className="px-4 pt-4">
                 <Button
                   className="w-full bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white"
-                  onClick={() => (window.location.href = "/membership")}
+                  onClick={() => (window.location.href = "/contact")}
                 >
-                  Join Now
+                  Varaa aika
                 </Button>
               </div>
             </div>

@@ -9,47 +9,43 @@ export default function HeroSection() {
 
   const slides = [
     {
-      title: "Building Ethical Business Ecosystems",
-      subtitle: "Empowering AJK & GB Through Islamic Values",
+      title: "3kk Koroton Maksuaika",
+      subtitle: "Joustava rahoitus autohuoltoosi",
       description:
-        "Join a prestigious network of visionary entrepreneurs, investors, and professionals committed to sustainable economic transformation grounded in Islamic ethics.",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
-      cta: "Join Our Mission",
+        "Tarjoamme 3 kuukauden korottoman maksuajan kaikille huolto- ja korjaustoimenpiteille. Maksa omaan tahtiisi ilman ylimaaraisia kuluja.",
+      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop",
+      cta: "Varaa aika",
     },
     {
-      title: "Strategic Focus on Regional Development",
-      subtitle: "Unlocking Economic Potential",
+      title: "BMW & Mercedes-Benz Maaraaikaishuollot",
+      subtitle: "Alk. 499€",
       description:
-        "From tourism and technology to mining and manufacturing, we're driving inclusive growth across key sectors in Azad Jammu & Kashmir and Gilgit Baltistan.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
-      cta: "Explore Opportunities",
+        "Premium-merkkien maaraaikaishuollot ammattitaidolla ja alkuperaisosilla. Kaikki huollot sisaltavat perusteellisen tarkastuksen ja huoltoraportin.",
+      image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&h=600&fit=crop",
+      cta: "Katso huollot",
     },
     {
-      title: "Policy Advocacy & Global Partnerships",
-      subtitle: "Connecting Local Talent to Global Markets",
+      title: "2 Vuoden Takuu Tyolle",
+      subtitle: "Varaosille pidempi valmistajan mukaan",
       description:
-        "Through thought leadership, skill development, and international outreach, we're creating pathways for sustainable business success.",
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop",
-      cta: "Learn More",
+        "Kaikelle tekemällemme työlle 2 vuoden takuu. Varaosille valmistajan mukainen takuu, joka voi olla jopa 3-5 vuotta osasta riippuen.",
+      image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=600&fit=crop",
+      cta: "Lue lisaa",
     },
   ]
 
   const handleCTAClick = (cta: string) => {
     switch (cta) {
-      case "Join Our Mission":
-        window.location.href = "/membership"
+      case "Varaa aika":
+        window.location.href = "/contact"
         break
-      case "Explore Opportunities":
+      case "Katso huollot":
         window.location.href = "/services"
         break
-      case "Learn More":
+      case "Lue lisaa":
         window.location.href = "/about"
         break
     }
-  }
-
-  const handleWatchVideo = () => {
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
   }
 
   useEffect(() => {
@@ -116,9 +112,9 @@ export default function HeroSection() {
                     size="lg"
                     variant="outline"
                     className="border-white text-black hover:bg-white hover:text-emerald-600 font-semibold px-8"
-                    onClick={handleWatchVideo}
+                    onClick={() => window.location.href = "/contact"}
                   >
-                    Watch Video
+                    Ota yhteytta
                   </Button>
                 </div>
               </div>
