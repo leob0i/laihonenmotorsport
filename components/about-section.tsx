@@ -1,16 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Wrench, Shield, Clock, Award, CircleDot } from "lucide-react"
+import { Wrench, Shield, Clock, Award, CircleDot, Car } from "lucide-react"
 
 export default function AboutSection() {
   return (
     <section className="py-20 bg-gradient-to-br from-emerald-50 to-blue-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Tietoa meista</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Huollamme kaikki merkit</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Leon Korjaamo on luotettava autokorjaamo, joka tarjoaa laadukasta huolto- ja korjauspalvelua kaikille
-            automerkeille. Ammattitaitoinen henkilokuntamme huolehtii autostasi kuin omastaan.
+            automerkeille. Ammattitaitoinen henkilökuntamme huolehtii autostasi kuin omastaan.
           </p>
         </div>
 
@@ -25,19 +25,19 @@ export default function AboutSection() {
             {
               icon: Shield,
               title: "2v Takuu",
-              description: "Takuu kaikelle tyonteollemme",
+              description: "Takuu kaikelle työnteollemme",
               color: "from-blue-500 to-cyan-500",
             },
             {
               icon: Clock,
               title: "Nopea palvelu",
-              description: "Tehokas ja tasmallinen toimitus",
+              description: "Tehokas ja täsmällinen toimitus",
               color: "from-emerald-600 to-green-600",
             },
             {
               icon: Award,
               title: "Laatu",
-              description: "Alkuperaiset ja laadukkaat varaosat",
+              description: "Alkuperäiset ja laadukkaat varaosat",
               color: "from-blue-600 to-indigo-600",
             },
           ].map((item, index) => (
@@ -63,11 +63,11 @@ export default function AboutSection() {
             <div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4">Rengaspalvelut</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Tarjoamme kattavat rengaspalvelut ammattitaidolla. Rengastyot hintaan <span className="font-bold text-emerald-600">75€/tunti</span>.
-                Meidan kauttamme saat myos renkaat ja vanteet laajasta valikoimastamme.
+                Tarjoamme kattavat rengaspalvelut ammattitaidolla. Rengastyöt hintaan <span className="font-bold text-emerald-600">75€/tunti</span>.
+                Meidän kauttamme saat myös renkaat ja vanteet laajasta valikoimastamme.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Iso valikoima renkaita ja vanteita kaikille automerkeille. Autamme sinua loytamaan juuri oikeat renkaat autoosi.
+                Iso valikoima renkaita ja vanteita kaikille automerkeille. Autamme sinua löytämään juuri oikeat renkaat autoosi.
               </p>
               <ul className="space-y-2">
                 {[
