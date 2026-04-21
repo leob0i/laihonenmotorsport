@@ -40,10 +40,10 @@ export default function HeroSection() {
         window.location.href = "/contact"
         break
       case "Katso huollot":
-        window.location.href = "/services"
+        window.location.href = "/premium-huollot"
         break
       case "Lue lisaa":
-        window.location.href = "/about"
+        window.location.href = "/palvelut"
         break
     }
   }

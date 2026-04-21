@@ -10,8 +10,8 @@ export default function Navigation() {
 
   const navItems = [
     { name: "Etusivu", href: "/" },
-    { name: "Tietoa meistä", href: "/about" },
     { name: "Palvelut", href: "/palvelut" },
+    { name: "Premium-huollot", href: "/premium-huollot" },
     { name: "Yhteystiedot", href: "/contact" },
   ]
 
