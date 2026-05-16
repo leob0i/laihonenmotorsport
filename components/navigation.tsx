@@ -12,6 +12,8 @@ export default function Navigation() {
     { name: "Etusivu", href: "/" },
     { name: "Palvelut", href: "/palvelut" },
     { name: "Premium-huollot", href: "/premium-huollot" },
+    { name: "Ohjelmointi", href: "/auton-ohjelmointi" },
+    { name: "Meistä", href: "/meista" },
     { name: "Yhteystiedot", href: "/contact" },
   ]
 
