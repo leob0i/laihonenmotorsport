@@ -3,48 +3,52 @@ import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border text-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-card border-t border-border">
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">LK</span>
+            <div className="flex items-center space-x-3 mb-8">
+              <div className="w-10 h-10 border border-primary flex items-center justify-center">
+                <span className="text-primary font-display font-bold text-lg">LK</span>
               </div>
-              <span className="font-bold text-xl">Leon Korjaamo</span>
+              <div className="flex flex-col">
+                <span className="font-display font-bold text-lg tracking-wider text-foreground uppercase">Leon</span>
+                <span className="text-[10px] tracking-ultra-wide text-muted-foreground uppercase">Korjaamo</span>
+              </div>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Luotettavaa ja laadukasta autohuoltoa. Kaikelle tyolle 2 vuoden takuu. Tervetuloa asioimaan!
+            <p className="text-muted-foreground text-sm leading-relaxed mb-8">
+              Luotettavaa ja laadukasta autohuoltoa. Kaikelle tyolle 2 vuoden takuu.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 transition-colors"
+                className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-colors"
+                className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-lg mb-6">Pikalinkit</h3>
-            <ul className="space-y-3">
+            <h3 className="font-display text-sm tracking-wider uppercase text-foreground mb-8">Navigaatio</h3>
+            <ul className="space-y-4">
               {[
                 { name: "Etusivu", href: "/" },
                 { name: "Palvelut", href: "/palvelut" },
-                { name: "Premium-huollot", href: "/premium-huollot" },
+                { name: "Premium", href: "/premium-huollot" },
+                { name: "Meista", href: "/meista" },
                 { name: "Yhteystiedot", href: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-emerald-400 transition-colors">
+                  <Link href={link.href} className="text-muted-foreground hover:text-primary text-sm transition-colors duration-300">
                     {link.name}
                   </Link>
                 </li>
@@ -54,17 +58,17 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-lg mb-6">Palvelut</h3>
-            <ul className="space-y-3">
+            <h3 className="font-display text-sm tracking-wider uppercase text-foreground mb-8">Palvelut</h3>
+            <ul className="space-y-4">
               {[
                 "Maaraaikaishuollot",
                 "Korjaukset",
                 "Rengaspalvelut",
                 "Diagnostiikka",
-                "Varaosat",
+                "Ohjelmointi",
               ].map((service) => (
                 <li key={service}>
-                  <span className="text-muted-foreground">{service}</span>
+                  <span className="text-muted-foreground text-sm">{service}</span>
                 </li>
               ))}
             </ul>
@@ -72,41 +76,40 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-bold text-lg mb-6">Yhteystiedot</h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-emerald-400 mt-1" />
-                <span className="text-muted-foreground">Korjaamokatu 1, 00100 Helsinki</span>
+            <h3 className="font-display text-sm tracking-wider uppercase text-foreground mb-8">Yhteystiedot</h3>
+            <div className="space-y-5">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-4 h-4 text-primary mt-0.5" />
+                <span className="text-muted-foreground text-sm">Korjaamokatu 1, 00100 Helsinki</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-emerald-400" />
-                <span className="text-muted-foreground">+358 40 123 4567</span>
+              <div className="flex items-center gap-4">
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="text-muted-foreground text-sm">+358 40 123 4567</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-emerald-400" />
-                <span className="text-muted-foreground">info@leonkorjaamo.fi</span>
+              <div className="flex items-center gap-4">
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="text-muted-foreground text-sm">info@leonkorjaamo.fi</span>
               </div>
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-emerald-400 mt-1" />
-                <div className="text-muted-foreground">
+              <div className="flex items-start gap-4">
+                <Clock className="w-4 h-4 text-primary mt-0.5" />
+                <div className="text-muted-foreground text-sm">
                   <p>Ma-Pe: 8:00-17:00</p>
                   <p>La: 9:00-14:00</p>
-                  <p>Su: Suljettu</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-muted-foreground text-sm">© 2024 Leon Korjaamo. Kaikki oikeudet pidatetaan.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="text-muted-foreground hover:text-emerald-400 text-sm transition-colors">
-                Tietosuojaseloste
+        <div className="border-t border-border mt-16 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-muted-foreground text-xs tracking-wide">© 2024 Leon Korjaamo</p>
+            <div className="flex space-x-8">
+              <Link href="#" className="text-muted-foreground hover:text-primary text-xs tracking-wide transition-colors duration-300">
+                Tietosuoja
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-emerald-400 text-sm transition-colors">
-                Kayttoehdot
+              <Link href="#" className="text-muted-foreground hover:text-primary text-xs tracking-wide transition-colors duration-300">
+                Ehdot
               </Link>
             </div>
           </div>

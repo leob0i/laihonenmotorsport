@@ -1,101 +1,91 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Wrench, Shield, Clock, Award, CircleDot, Car } from "lucide-react"
+import { Wrench, Shield, Clock, Award, CircleDot } from "lucide-react"
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Huollamme kaikki merkit</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Leon Korjaamo on luotettava autokorjaamo, joka tarjoaa laadukasta huolto- ja korjauspalvelua kaikille
-            automerkeille. Ammattitaitoinen henkilökuntamme huolehtii autostasi kuin omastaan.
+        <div className="text-center mb-20">
+          <span className="text-primary text-xs tracking-ultra-wide uppercase font-medium">Asiantuntijuus</span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6 uppercase tracking-tight">
+            Huollamme kaikki merkit
+          </h2>
+          <div className="w-16 h-0.5 bg-primary mx-auto mb-8"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Ammattitaitoinen henkilökuntamme huolehtii autostasi kuin omastaan.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {[
             {
               icon: Wrench,
               title: "Ammattitaito",
-              description: "Kokeneet mekaanikot palveluksessasi",
-              color: "from-emerald-500 to-teal-500",
+              description: "Kokeneet mekaanikot",
             },
             {
               icon: Shield,
               title: "2v Takuu",
-              description: "Takuu kaikelle työnteollemme",
-              color: "from-blue-500 to-cyan-500",
+              description: "Kaikelle tyolle",
             },
             {
               icon: Clock,
-              title: "Nopea palvelu",
-              description: "Tehokas ja täsmällinen toimitus",
-              color: "from-emerald-600 to-green-600",
+              title: "Nopea",
+              description: "Tehokas toimitus",
             },
             {
               icon: Award,
               title: "Laatu",
-              description: "Alkuperäiset ja laadukkaat varaosat",
-              color: "from-blue-600 to-indigo-600",
+              description: "Alkuperaisosat",
             },
           ].map((item, index) => (
-            <Card
+            <div
               key={index}
-              className="group hover:shadow-xl transition-all duration-500 border-border bg-card"
+              className="group p-8 border border-border hover:border-primary/50 bg-card transition-all duration-500"
             >
-              <CardContent className="p-6 text-center">
-                <div
-                  className={`w-16 h-16 rounded-full bg-gradient-to-r ${item.color} mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <item.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </CardContent>
-            </Card>
+              <item.icon className="w-8 h-8 text-primary mb-6 group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2 uppercase tracking-wide">{item.title}</h3>
+              <p className="text-muted-foreground text-sm">{item.description}</p>
+            </div>
           ))}
         </div>
 
-        <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-foreground mb-4">Rengaspalvelut</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Tarjoamme kattavat rengaspalvelut ammattitaidolla. Rengastyöt hintaan <span className="font-bold text-emerald-400">75€/tunti</span>.
-                Meidän kauttamme saat myös renkaat ja vanteet laajasta valikoimastamme.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Iso valikoima renkaita ja vanteita kaikille automerkeille. Autamme sinua löytämään juuri oikeat renkaat autoosi.
-              </p>
-              <ul className="space-y-2">
-                {[
-                  "Rengasvaihdot ja -asennukset",
-                  "Renkaiden tasapainotus",
-                  "Vannevaurioiden korjaus",
-                  "Renkaat ja vanteet kauttamme",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-500 to-blue-500"></div>
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="text-primary text-xs tracking-ultra-wide uppercase font-medium">Rengaspalvelut</span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-4 mb-6 uppercase tracking-tight">
+              Renkaat & Vanteet
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Tarjoamme kattavat rengaspalvelut ammattitaidolla. Meidän kauttamme saat myös renkaat ja vanteet laajasta valikoimastamme.
+            </p>
+            <div className="flex items-baseline gap-2 mb-8">
+              <span className="font-display text-5xl font-bold text-primary">75</span>
+              <span className="text-2xl text-muted-foreground">€/tunti</span>
             </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop"
-                alt="Rengaspalvelut"
-                className="rounded-lg shadow-lg"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/20 to-transparent rounded-lg"></div>
-              <div className="absolute bottom-4 left-4 bg-card/90 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
-                <div className="flex items-center gap-2">
-                  <CircleDot className="w-5 h-5 text-emerald-400" />
-                  <span className="font-bold text-foreground">75€/tunti</span>
-                </div>
-              </div>
+            <ul className="space-y-4">
+              {[
+                "Rengasvaihdot ja -asennukset",
+                "Renkaiden tasapainotus",
+                "Vannevaurioiden korjaus",
+                "Iso valikoima renkaita ja vanteita",
+              ].map((item, index) => (
+                <li key={index} className="flex items-center gap-4">
+                  <div className="w-1.5 h-1.5 bg-primary"></div>
+                  <span className="text-foreground text-sm tracking-wide">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=500&fit=crop"
+              alt="Rengaspalvelut"
+              className="w-full h-[500px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+            <div className="absolute bottom-6 left-6 flex items-center gap-3">
+              <CircleDot className="w-5 h-5 text-primary" />
+              <span className="font-display text-sm tracking-wider uppercase text-foreground">Premium laatu</span>
             </div>
           </div>
         </div>

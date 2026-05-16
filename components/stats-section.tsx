@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent } from "@/components/ui/card"
 
 export default function StatsSection() {
   const [counts, setCounts] = useState({
@@ -46,61 +45,37 @@ export default function StatsSection() {
   const stats = [
     {
       number: Math.floor(counts.customers),
-      label: "Tyytyvaista asiakasta",
-      description: "Ja maara kasvaa jatkuvasti",
-      color: "from-emerald-500 to-teal-500",
+      label: "Asiakasta",
       suffix: "+",
     },
     {
       number: Math.floor(counts.services),
-      label: "Tehtyä huoltoa",
-      description: "Ammattitaitoista tyota",
-      color: "from-blue-500 to-cyan-500",
+      label: "Huoltoa",
       suffix: "+",
     },
     {
       number: Math.floor(counts.years),
-      label: "Vuotta kokemusta",
-      description: "Alalla toimimista",
-      color: "from-emerald-600 to-green-600",
+      label: "Vuotta",
       suffix: "",
     },
     {
       number: Math.floor(counts.satisfaction),
-      label: "Asiakastyytyvaisyys",
-      description: "Suosittelee meita",
-      color: "from-blue-600 to-indigo-600",
+      label: "Tyytyvaisia",
       suffix: "%",
     },
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-r from-emerald-600 to-blue-600">
+    <section className="py-24 bg-background border-y border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Leon Korjaamo lukuina</h2>
-          <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Luotettavaa ja laadukasta palvelua jo vuosien ajan
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
           {stats.map((stat, index) => (
-            <Card
-              key={index}
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-300"
-            >
-              <CardContent className="p-6 text-center">
-                <div
-                  className={`text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}
-                >
-                  {stat.number.toLocaleString()}{stat.suffix}
-                </div>
-                <h3 className="text-xl font-semibold mb-1">{stat.label}</h3>
-                <p className="text-white/80 text-sm">{stat.description}</p>
-              </CardContent>
-            </Card>
+            <div key={index} className="text-center">
+              <div className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-2">
+                {stat.number.toLocaleString()}{stat.suffix}
+              </div>
+              <div className="text-xs tracking-ultra-wide uppercase text-muted-foreground">{stat.label}</div>
+            </div>
           ))}
         </div>
       </div>
