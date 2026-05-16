@@ -17,22 +17,22 @@ import Footer from "@/components/footer"
 const values = [
   {
     icon: Shield,
-    title: "Luotettavuus",
+    title: "LUOTETTAVUUS",
     description: "2 vuoden takuu kaikelle työllemme. Pidämme lupauksemme.",
   },
   {
     icon: Award,
-    title: "Ammattitaito",
+    title: "AMMATTITAITO",
     description: "Kokeneet mekaanikomme ovat erikoistuneet premium-merkkeihin.",
   },
   {
     icon: Clock,
-    title: "Nopeus",
+    title: "NOPEUS",
     description: "Useimmat työt valmiina saman päivän aikana.",
   },
   {
     icon: Heart,
-    title: "Asiakaspalvelu",
+    title: "ASIAKASPALVELU",
     description: "Rehellinen ja avoin kommunikaatio asiakkaidemme kanssa.",
   },
 ]
@@ -59,7 +59,7 @@ export default function MeistaPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-gray-950">
+      <main className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
@@ -68,22 +68,22 @@ export default function MeistaPage() {
               alt="Leon Korjaamo"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/90 to-gray-950/70"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-4 py-32">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 mb-6">
-                <Users className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-400 text-sm font-medium">Tietoa meistä</span>
+              <div className="inline-flex items-center gap-2 border border-primary/30 px-4 py-2 mb-6">
+                <Users className="w-4 h-4 text-primary" />
+                <span className="text-primary text-sm font-medium tracking-widest uppercase">Tietoa meistä</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6 leading-none tracking-tight uppercase">
                 Leon Korjaamo
               </h1>
               
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
                 Olemme premium-autojen erikoiskorjaamo, joka tarjoaa huippuluokan 
                 huolto- ja korjauspalveluita. Luotettavuus, ammattitaito ja asiakastyytyväisyys 
                 ovat toimintamme kulmakiviä.
@@ -92,7 +92,7 @@ export default function MeistaPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-semibold px-8 h-14 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-sm tracking-widest uppercase"
                   onClick={() => window.location.href = "/contact"}
                 >
                   Ota yhteyttä
@@ -101,7 +101,7 @@ export default function MeistaPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-gray-700 text-white hover:bg-gray-800 font-semibold px-8 h-14 text-lg"
+                  className="border-border text-foreground hover:bg-card font-semibold px-8 h-14 text-sm tracking-widest uppercase"
                   onClick={() => window.location.href = "/tyomme"}
                 >
                   Katso työmme
@@ -112,17 +112,17 @@ export default function MeistaPage() {
         </section>
 
         {/* Values */}
-        <section className="py-20 bg-gray-900/50 border-y border-gray-800">
+        <section className="py-20 bg-card border-y border-border">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-emerald-500/20 to-blue-500/20 flex items-center justify-center flex-shrink-0">
-                    <value.icon className="w-6 h-6 text-emerald-400" />
+                  <div className="w-12 h-12 border border-primary/30 flex items-center justify-center flex-shrink-0">
+                    <value.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">{value.title}</h3>
-                    <p className="text-gray-400 text-sm">{value.description}</p>
+                    <h3 className="text-sm font-semibold text-foreground mb-1 tracking-widest">{value.title}</h3>
+                    <p className="text-muted-foreground text-sm">{value.description}</p>
                   </div>
                 </div>
               ))}
@@ -135,21 +135,21 @@ export default function MeistaPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-white mb-4">Tarinamme</h2>
+                <h2 className="font-display text-4xl font-bold text-foreground mb-4 tracking-tight uppercase">Tarinamme</h2>
               </div>
 
-              <div className="prose prose-invert prose-lg max-w-none">
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <div className="space-y-6">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   Leon Korjaamo perustettiin intohimosta autoja kohtaan ja halusta tarjota 
                   asiakkaille parasta mahdollista palvelua. Olemme erikoistuneet 
                   premium-merkkeihin kuten BMW ja Mercedes-Benz, mutta huollamme kaikki merkit.
                 </p>
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   Meillä on käytössä alan uusimmat diagnostiikkalaitteet ja merkkikohtaiset 
                   erikoistyökalut. Mekaanikkomme ovat koulutettuja ja kokeneita ammattilaisia, 
                   jotka pitävät osaamisensa ajan tasalla jatkuvalla koulutuksella.
                 </p>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-muted-foreground text-lg leading-relaxed">
                   Tarjoamme 2 vuoden takuun kaikelle työllemme ja 3 kuukauden korottoman 
                   maksuajan. Meille asiakastyytyväisyys on tärkeintä.
                 </p>
@@ -159,11 +159,11 @@ export default function MeistaPage() {
         </section>
 
         {/* Team */}
-        <section className="py-24 bg-gray-900/30">
+        <section className="py-24 bg-card">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Tiimimme</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <h2 className="font-display text-4xl font-bold text-foreground mb-4 tracking-tight uppercase">Tiimimme</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Kokeneet ammattilaiset palveluksessasi
               </p>
             </div>
@@ -172,15 +172,15 @@ export default function MeistaPage() {
               {team.map((member, index) => (
                 <Card 
                   key={index} 
-                  className="bg-gray-900/50 border-gray-800"
+                  className="bg-background border-border"
                 >
                   <CardContent className="p-6 text-center">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-r from-emerald-500/20 to-blue-500/20 flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-10 h-10 text-emerald-400" />
+                    <div className="w-24 h-24 border border-primary/30 flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-10 h-10 text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-emerald-400 text-sm mb-3">{member.role}</p>
-                    <p className="text-gray-400 text-sm">{member.description}</p>
+                    <h3 className="text-xl font-bold text-foreground mb-1 tracking-wide uppercase">{member.name}</h3>
+                    <p className="text-primary text-sm mb-3 tracking-widest uppercase">{member.role}</p>
+                    <p className="text-muted-foreground text-sm">{member.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -192,10 +192,10 @@ export default function MeistaPage() {
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Miksi Leon Korjaamo?</h2>
+              <h2 className="font-display text-4xl font-bold text-foreground mb-4 tracking-tight uppercase">Miksi Leon Korjaamo?</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {[
                 "2 vuoden takuu kaikelle työlle",
                 "3 kuukauden koroton maksuaika",
@@ -209,10 +209,10 @@ export default function MeistaPage() {
               ].map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-3 bg-gray-900/50 border border-gray-800 rounded-xl p-4"
+                  className="flex items-center gap-3 bg-card border border-border p-4"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span className="text-gray-300">{item}</span>
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-muted-foreground">{item}</span>
                 </div>
               ))}
             </div>
@@ -220,19 +220,19 @@ export default function MeistaPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-gradient-to-r from-emerald-600 to-blue-600">
+        <section className="py-24 bg-primary">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6 tracking-tight uppercase">
               Tule tutustumaan!
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
               Ota yhteyttä ja kerro miten voimme auttaa. Olemme täällä sinua varten.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-emerald-600 hover:bg-gray-100 font-semibold px-8 h-14 text-lg"
+                className="bg-background text-foreground hover:bg-background/90 font-semibold px-8 h-14 text-sm tracking-widest uppercase"
                 onClick={() => window.location.href = "/contact"}
               >
                 Ota yhteyttä

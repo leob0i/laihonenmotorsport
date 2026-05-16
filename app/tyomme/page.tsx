@@ -5,8 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { 
   ArrowRight, 
   Camera, 
-  Shield,
-  CheckCircle2,
   Star
 } from "lucide-react"
 import Navigation from "@/components/navigation"
@@ -62,7 +60,7 @@ export default function TyommePage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-gray-950">
+      <main className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
@@ -71,22 +69,22 @@ export default function TyommePage() {
               alt="Työmme"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/90 to-gray-950/70"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
           </div>
 
           <div className="relative z-10 container mx-auto px-4 py-32">
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 mb-6">
-                <Camera className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-400 text-sm font-medium">Portfolio</span>
+              <div className="inline-flex items-center gap-2 border border-primary/30 px-4 py-2 mb-6">
+                <Camera className="w-4 h-4 text-primary" />
+                <span className="text-primary text-sm font-medium tracking-widest uppercase">Portfolio</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6 leading-none tracking-tight uppercase">
                 Työmme
               </h1>
               
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
                 Tutustu tekemiimme töihin ja näe laatu omin silmin. 
                 Jokainen projekti on meille yhtä tärkeä.
               </p>
@@ -94,7 +92,7 @@ export default function TyommePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-semibold px-8 h-14 text-lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-sm tracking-widest uppercase"
                   onClick={() => window.location.href = "/contact"}
                 >
                   Ota yhteyttä
@@ -106,15 +104,15 @@ export default function TyommePage() {
         </section>
 
         {/* Stats */}
-        <section className="py-20 bg-gray-900/50 border-y border-gray-800">
+        <section className="py-20 bg-card border-y border-border">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <p className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
                     {stat.value}
                   </p>
-                  <p className="text-gray-400">{stat.label}</p>
+                  <p className="text-muted-foreground tracking-widest uppercase text-sm">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -125,8 +123,8 @@ export default function TyommePage() {
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Viimeaikaisia projekteja</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
+              <h2 className="font-display text-4xl font-bold text-foreground mb-4 tracking-tight uppercase">Viimeaikaisia projekteja</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Jokainen auto saa meiltä yksilöllistä huomiota ja ammattitaitoista palvelua
               </p>
             </div>
@@ -135,7 +133,7 @@ export default function TyommePage() {
               {projects.map((project, index) => (
                 <Card 
                   key={index} 
-                  className="bg-gray-900/50 border-gray-800 overflow-hidden group hover:border-emerald-500/50 transition-all duration-300"
+                  className="bg-card border-border overflow-hidden group hover:border-primary/50 transition-all duration-300"
                 >
                   <div className="aspect-video overflow-hidden">
                     <img
@@ -146,12 +144,12 @@ export default function TyommePage() {
                   </div>
                   <CardContent className="p-6">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-medium bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded-full">
+                      <span className="text-xs font-medium border border-primary/30 text-primary px-2 py-1 tracking-widest uppercase">
                         {project.category}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                    <p className="text-gray-400 text-sm">{project.description}</p>
+                    <h3 className="text-xl font-bold text-foreground mb-2 tracking-wide uppercase">{project.title}</h3>
+                    <p className="text-muted-foreground text-sm">{project.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -160,10 +158,10 @@ export default function TyommePage() {
         </section>
 
         {/* Reviews */}
-        <section className="py-24 bg-gray-900/30">
+        <section className="py-24 bg-card">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Asiakkaiden palaute</h2>
+              <h2 className="font-display text-4xl font-bold text-foreground mb-4 tracking-tight uppercase">Asiakkaiden palaute</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -183,16 +181,16 @@ export default function TyommePage() {
               ].map((review, index) => (
                 <Card 
                   key={index} 
-                  className="bg-gray-900/50 border-gray-800"
+                  className="bg-background border-border"
                 >
                   <CardContent className="p-6">
                     <div className="flex gap-1 mb-4">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                        <Star key={star} className="w-5 h-5 text-primary fill-primary" />
                       ))}
                     </div>
-                    <p className="text-gray-300 mb-4">&quot;{review.text}&quot;</p>
-                    <p className="text-emerald-400 font-medium">- {review.author}</p>
+                    <p className="text-muted-foreground mb-4">&quot;{review.text}&quot;</p>
+                    <p className="text-primary font-medium tracking-widest uppercase text-sm">- {review.author}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -201,19 +199,19 @@ export default function TyommePage() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-gradient-to-r from-emerald-600 to-blue-600">
+        <section className="py-24 bg-primary">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6 tracking-tight uppercase">
               Haluatko autosi meille?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
               Ota yhteyttä ja kerro tarpeestasi. Hoidamme autosi ammattitaidolla.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-white text-emerald-600 hover:bg-gray-100 font-semibold px-8 h-14 text-lg"
+                className="bg-background text-foreground hover:bg-background/90 font-semibold px-8 h-14 text-sm tracking-widest uppercase"
                 onClick={() => window.location.href = "/contact"}
               >
                 Ota yhteyttä
