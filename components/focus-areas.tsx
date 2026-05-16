@@ -38,12 +38,12 @@ export default function FocusAreas() {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Palvelumme</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Palvelumme</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Tarjoamme kattavat autohuoltopalvelut ammattitaidolla ja laadukkailla varaosilla
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function FocusAreas() {
           {areas.map((area, index) => (
             <Card
               key={index}
-              className="group hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-gray-50 to-white overflow-hidden"
+              className="group hover:shadow-2xl transition-all duration-500 border-border bg-background overflow-hidden"
             >
               <CardContent className="p-0">
                 <div className={`bg-gradient-to-r ${area.color} p-6 text-white`}>
@@ -61,14 +61,14 @@ export default function FocusAreas() {
                   <div className="text-sm bg-white/20 rounded-full px-3 py-1 w-fit">{area.stats}</div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600 leading-relaxed">{area.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">{area.description}</p>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <Card className="group hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+        <Card className="group hover:shadow-2xl transition-all duration-500 border-border bg-background overflow-hidden">
           <CardContent className="p-0">
             <div className="bg-gradient-to-r from-teal-500 to-emerald-500 p-6 text-white">
               <Wrench className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform duration-300" />
@@ -76,7 +76,7 @@ export default function FocusAreas() {
               <div className="text-sm bg-white/20 rounded-full px-3 py-1 w-fit">Laaja valikoima</div>
             </div>
             <div className="p-6">
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 Katso kaikki palvelumme yhdellä sivulla. Huollot, korjaukset, rengaspalvelut, katsastus ja paljon muuta.
               </p>
               <Link href="/palvelut">

@@ -9,12 +9,12 @@ export default function PartnersSection() {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Huollamme kaikki merkit</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Huollamme kaikki merkit</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Erikoistumme erityisesti BMW ja Mercedes-Benz merkkeihin, mutta huollamme ammattitaidolla kaikki automerkit
           </p>
         </div>
@@ -23,13 +23,13 @@ export default function PartnersSection() {
           {brands.map((brand, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
+              className="flex items-center justify-center p-4 opacity-60 hover:opacity-100 transition-all duration-300"
             >
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center bg-gray-100 rounded-full">
-                  <span className="text-2xl font-bold text-gray-600">{brand.name.charAt(0)}</span>
+                <div className="w-16 h-16 mx-auto mb-2 flex items-center justify-center bg-white/10 border border-border rounded-full">
+                  <span className="text-2xl font-bold text-foreground">{brand.name.charAt(0)}</span>
                 </div>
-                <span className="text-sm text-gray-500 font-medium">{brand.name}</span>
+                <span className="text-sm text-muted-foreground font-medium">{brand.name}</span>
               </div>
             </div>
           ))}

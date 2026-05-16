@@ -7,7 +7,7 @@ import PartnersSection from "@/components/partners-section"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       <HeroSection />
       <AboutSection />
       <FocusAreas />

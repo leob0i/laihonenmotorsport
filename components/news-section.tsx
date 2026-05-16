@@ -31,12 +31,12 @@ export default function NewsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Ajankohtaista</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Ajankohtaista</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Pysy ajan tasalla korjaamon uutisista ja tarjouksista
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function NewsSection() {
           {news.map((item, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-500 border-0 bg-white overflow-hidden"
+              className="group hover:shadow-xl transition-all duration-500 border-border bg-card overflow-hidden"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -58,15 +58,15 @@ export default function NewsSection() {
                 </div>
               </div>
               <CardContent className="p-6">
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                   <Calendar className="w-4 h-4" />
                   {item.date}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-emerald-600 transition-colors">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-emerald-400 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">{item.excerpt}</p>
-                <Button variant="ghost" className="p-0 h-auto text-emerald-600 hover:text-emerald-700">
+                <p className="text-muted-foreground leading-relaxed mb-4">{item.excerpt}</p>
+                <Button variant="ghost" className="p-0 h-auto text-emerald-400 hover:text-emerald-300">
                   Lue lisaa
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>

@@ -25,7 +25,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -33,14 +33,14 @@ export default function Navigation() {
             <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">LK</span>
             </div>
-            <span className="font-bold text-xl text-gray-800">Leon Korjaamo</span>
+            <span className="font-bold text-xl text-foreground">Leon Korjaamo</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+              className="text-muted-foreground hover:text-emerald-400 font-medium transition-colors duration-200"
             >
               Etusivu
             </Link>
@@ -51,18 +51,18 @@ export default function Navigation() {
               onMouseEnter={() => setPalvelutOpen(true)}
               onMouseLeave={() => setPalvelutOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
+              <button className="flex items-center gap-1 text-muted-foreground hover:text-emerald-400 font-medium transition-colors duration-200">
                 Palvelut
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${palvelutOpen ? "rotate-180" : ""}`} />
               </button>
               
               {palvelutOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-card rounded-lg shadow-lg border border-border py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                   {palvelutItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors duration-200"
+                      className="block px-4 py-2 text-muted-foreground hover:text-emerald-400 hover:bg-background transition-colors duration-200"
                     >
                       {item.name}
                     </Link>
@@ -73,19 +73,19 @@ export default function Navigation() {
 
             <Link
               href="/premium-huollot"
-              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+              className="text-muted-foreground hover:text-emerald-400 font-medium transition-colors duration-200"
             >
               Premium-huollot
             </Link>
             <Link
               href="/meista"
-              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+              className="text-muted-foreground hover:text-emerald-400 font-medium transition-colors duration-200"
             >
               Meistä
             </Link>
             <Link
               href="/contact"
-              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+              className="text-muted-foreground hover:text-emerald-400 font-medium transition-colors duration-200"
             >
               Yhteystiedot
             </Link>
@@ -102,18 +102,18 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100">
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-lg hover:bg-card text-foreground">
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-border">
             <div className="space-y-2">
               <Link
                 href="/"
-                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-2 text-muted-foreground hover:text-emerald-400 hover:bg-card rounded-lg transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Etusivu
@@ -123,7 +123,7 @@ export default function Navigation() {
               <div>
                 <button
                   onClick={() => setPalvelutOpen(!palvelutOpen)}
-                  className="flex items-center justify-between w-full px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                  className="flex items-center justify-between w-full px-4 py-2 text-muted-foreground hover:text-emerald-400 hover:bg-card rounded-lg transition-colors duration-200"
                 >
                   Palvelut
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${palvelutOpen ? "rotate-180" : ""}`} />
@@ -134,7 +134,7 @@ export default function Navigation() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-4 py-2 text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 text-sm"
+                        className="block px-4 py-2 text-muted-foreground hover:text-emerald-400 hover:bg-card rounded-lg transition-colors duration-200 text-sm"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.name}
@@ -146,21 +146,21 @@ export default function Navigation() {
 
               <Link
                 href="/premium-huollot"
-                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-2 text-muted-foreground hover:text-emerald-400 hover:bg-card rounded-lg transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Premium-huollot
               </Link>
               <Link
                 href="/meista"
-                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-2 text-muted-foreground hover:text-emerald-400 hover:bg-card rounded-lg transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Meistä
               </Link>
               <Link
                 href="/contact"
-                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                className="block px-4 py-2 text-muted-foreground hover:text-emerald-400 hover:bg-card rounded-lg transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 Yhteystiedot

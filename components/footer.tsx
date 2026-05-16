@@ -3,7 +3,7 @@ import { Facebook, Instagram, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-background border-t border-border text-foreground">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -14,19 +14,19 @@ export default function Footer() {
               </div>
               <span className="font-bold text-xl">Leon Korjaamo</span>
             </div>
-            <p className="text-gray-300 leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               Luotettavaa ja laadukasta autohuoltoa. Kaikelle tyolle 2 vuoden takuu. Tervetuloa asioimaan!
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors"
+                className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors"
+                className="w-10 h-10 bg-card border border-border rounded-lg flex items-center justify-center hover:bg-pink-600 hover:border-pink-600 transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -39,12 +39,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: "Etusivu", href: "/" },
-                { name: "Tietoa meista", href: "/about" },
-                { name: "Palvelut", href: "/services" },
+                { name: "Palvelut", href: "/palvelut" },
+                { name: "Premium-huollot", href: "/premium-huollot" },
                 { name: "Yhteystiedot", href: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-emerald-400 transition-colors">
+                  <Link href={link.href} className="text-muted-foreground hover:text-emerald-400 transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -64,7 +64,7 @@ export default function Footer() {
                 "Varaosat",
               ].map((service) => (
                 <li key={service}>
-                  <span className="text-gray-300">{service}</span>
+                  <span className="text-muted-foreground">{service}</span>
                 </li>
               ))}
             </ul>
@@ -76,19 +76,19 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-emerald-400 mt-1" />
-                <span className="text-gray-300">Korjaamokatu 1, 00100 Helsinki</span>
+                <span className="text-muted-foreground">Korjaamokatu 1, 00100 Helsinki</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-emerald-400" />
-                <span className="text-gray-300">+358 40 123 4567</span>
+                <span className="text-muted-foreground">+358 40 123 4567</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-emerald-400" />
-                <span className="text-gray-300">info@leonkorjaamo.fi</span>
+                <span className="text-muted-foreground">info@leonkorjaamo.fi</span>
               </div>
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-emerald-400 mt-1" />
-                <div className="text-gray-300">
+                <div className="text-muted-foreground">
                   <p>Ma-Pe: 8:00-17:00</p>
                   <p>La: 9:00-14:00</p>
                   <p>Su: Suljettu</p>
@@ -98,14 +98,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">© 2024 Leon Korjaamo. Kaikki oikeudet pidatetaan.</p>
+            <p className="text-muted-foreground text-sm">© 2024 Leon Korjaamo. Kaikki oikeudet pidatetaan.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
+              <Link href="#" className="text-muted-foreground hover:text-emerald-400 text-sm transition-colors">
                 Tietosuojaseloste
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-emerald-400 text-sm transition-colors">
+              <Link href="#" className="text-muted-foreground hover:text-emerald-400 text-sm transition-colors">
                 Kayttoehdot
               </Link>
             </div>

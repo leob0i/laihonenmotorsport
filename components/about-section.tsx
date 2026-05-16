@@ -3,12 +3,12 @@ import { Wrench, Shield, Clock, Award, CircleDot, Car } from "lucide-react"
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-emerald-50 to-blue-50">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Huollamme kaikki merkit</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Huollamme kaikki merkit</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Leon Korjaamo on luotettava autokorjaamo, joka tarjoaa laadukasta huolto- ja korjauspalvelua kaikille
             automerkeille. Ammattitaitoinen henkilökuntamme huolehtii autostasi kuin omastaan.
           </p>
@@ -43,7 +43,7 @@ export default function AboutSection() {
           ].map((item, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-500 border-0 bg-white/80 backdrop-blur-sm"
+              className="group hover:shadow-xl transition-all duration-500 border-border bg-card"
             >
               <CardContent className="p-6 text-center">
                 <div
@@ -51,22 +51,22 @@ export default function AboutSection() {
                 >
                   <item.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+        <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Rengaspalvelut</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Tarjoamme kattavat rengaspalvelut ammattitaidolla. Rengastyöt hintaan <span className="font-bold text-emerald-600">75€/tunti</span>.
+              <h3 className="text-3xl font-bold text-foreground mb-4">Rengaspalvelut</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Tarjoamme kattavat rengaspalvelut ammattitaidolla. Rengastyöt hintaan <span className="font-bold text-emerald-400">75€/tunti</span>.
                 Meidän kauttamme saat myös renkaat ja vanteet laajasta valikoimastamme.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-6">
                 Iso valikoima renkaita ja vanteita kaikille automerkeille. Autamme sinua löytämään juuri oikeat renkaat autoosi.
               </p>
               <ul className="space-y-2">
@@ -78,7 +78,7 @@ export default function AboutSection() {
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-500 to-blue-500"></div>
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -90,10 +90,10 @@ export default function AboutSection() {
                 className="rounded-lg shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/20 to-transparent rounded-lg"></div>
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+              <div className="absolute bottom-4 left-4 bg-card/90 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
                 <div className="flex items-center gap-2">
-                  <CircleDot className="w-5 h-5 text-emerald-600" />
-                  <span className="font-bold text-gray-800">75€/tunti</span>
+                  <CircleDot className="w-5 h-5 text-emerald-400" />
+                  <span className="font-bold text-foreground">75€/tunti</span>
                 </div>
               </div>
             </div>
