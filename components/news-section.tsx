@@ -8,14 +8,14 @@ export default function NewsSection() {
       excerpt: "Varaa aikasi ajoissa kevaan rengasvaihtoon.",
       date: "03.2024",
       category: "Renkaat",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      image: "/maantie.nmw.webp",
     },
     {
       title: "Uudet diagnostiikkalaitteet",
       excerpt: "Uusinta diagnostiikkatekniikkaa kaytossanne.",
       date: "02.2024",
       category: "Uutiset",
-      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&h=300&fit=crop",
+      image: "/moottori.webp",
     },
     {
       title: "BMW & Mercedes erikoishuollot",

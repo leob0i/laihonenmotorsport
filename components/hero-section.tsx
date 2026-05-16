@@ -9,27 +9,33 @@ export default function HeroSection() {
 
   const slides = [
     {
-      title: "3kk Koroton Maksuaika",
+      title: "Xhp-vaihdelaatikko ja ohjelmoinnit",
       subtitle: "Joustava rahoitus",
       description:
-        "Tarjoamme 3 kuukauden korottoman maksuajan kaikille huolto- ja korjaustoimenpiteille.",
-      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop",
+        "Ohjelmoinnit luotettavasti geevoimaa jälleenmyyjältä.",
+      image: "/ecutuning.jpg",
+      objectPosition: "center center",
+      overlayOpacity: "0.80",
       cta: "Varaa aika",
     },
     {
-      title: "BMW & Mercedes-Benz",
+      title: "Huollot",
       subtitle: "Maaraaikaishuollot alk. 499€",
       description:
-        "Premium-merkkien maaraaikaishuollot ammattitaidolla ja alkuperaisosilla.",
-      image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&h=600&fit=crop",
+        "Meillä on vuosien kokemus bmw autoista. Tarjoamme kattavat korjaus- ja huoltopalvelut myös kaikille automerkeille.",
+      image: "/huollot.webp",
+      objectPosition: "center 85%",
+      overlayOpacity: "0.35",
       cta: "Katso huollot",
     },
     {
-      title: "2 Vuoden Takuu",
+      title: "Pakoputkistot",
       subtitle: "Tyolle ja varaosille",
       description:
-        "Kaikelle tekemällemme työlle 2 vuoden takuu. Varaosille valmistajan mukainen takuu.",
-      image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=600&fit=crop",
+        "Teemme custom putkistot ja muutkin hitsaus ja korin muutos työt ammattitaidolla ja tyylillä.",
+      image: "/moottori.webp",
+      objectPosition: "center center",
+      overlayOpacity: "0.80",
       cta: "Lue lisaa",
     },
   ]
@@ -74,8 +80,8 @@ export default function HeroSection() {
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
-            <div className="absolute inset-0 bg-black/80 z-10"></div>
-            <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 z-10" style={{ backgroundColor: `rgba(0,0,0,${slide.overlayOpacity})` }}></div>
+            <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" style={{ objectPosition: slide.objectPosition }} />
           </div>
         ))}
       </div>
@@ -92,9 +98,6 @@ export default function HeroSection() {
                 }`}
                 style={{ display: index === currentSlide ? "block" : "none" }}
               >
-                <div className="text-primary font-display text-sm tracking-ultra-wide uppercase mb-4 animate-fade-in">
-                  {slide.subtitle}
-                </div>
                 <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight uppercase animate-slide-up">
                   {slide.title}
                 </h1>

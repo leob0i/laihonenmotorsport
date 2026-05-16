@@ -11,24 +11,28 @@ export default function FocusAreas() {
       title: "Maaraaikaishuollot",
       description: "BMW ja Mercedes-Benz huollot alk. 499€",
       stats: "Alk. 499€",
+      image: "/huollot.webp",
     },
     {
       icon: Car,
       title: "Korjaukset",
       description: "Kaikelle tyolle 2 vuoden takuu",
       stats: "2v Takuu",
+      image: "/bmw.tumma.korjaamo.jpeg",
     },
     {
       icon: Settings,
       title: "Varaosat",
       description: "Alkuperaiset ja laadukkaat varaosat",
       stats: "Alkuperais",
+      image: "/maantie.nmw.webp",
     },
     {
       icon: Gauge,
       title: "Diagnostiikka",
       description: "Modernit diagnostiikkalaitteet",
       stats: "Nykyaikainen",
+      image: "/ecutuning.jpg",
     },
   ]
 
@@ -47,9 +51,10 @@ export default function FocusAreas() {
           {areas.map((area, index) => (
             <div
               key={index}
-              className="group relative p-8 border border-border hover:border-primary/50 bg-background transition-all duration-500 overflow-hidden"
+              className="group relative p-8 border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors duration-500"></div>
+              <img src={area.image} alt={area.title} className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/65 group-hover:bg-black/55 transition-colors duration-500"></div>
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-6">
                   <area.icon className="w-10 h-10 text-primary" strokeWidth={1.5} />
@@ -62,8 +67,9 @@ export default function FocusAreas() {
           ))}
         </div>
 
-        <div className="relative p-10 border border-primary/30 bg-background overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent"></div>
+        <div className="relative p-10 border border-primary/30 overflow-hidden">
+          <img src="/moottori.webp" alt="Palvelut" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/70"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-6">
               <Wrench className="w-12 h-12 text-primary" strokeWidth={1.5} />

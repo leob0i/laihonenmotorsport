@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
@@ -8,6 +8,16 @@ import { Menu, X, ChevronDown } from "lucide-react"
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [palvelutOpen, setPalvelutOpen] = useState(false)
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handlePalvelutEnter = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    setPalvelutOpen(true)
+  }
+
+  const handlePalvelutLeave = () => {
+    closeTimeout.current = setTimeout(() => setPalvelutOpen(false), 150)
+  }
 
   const palvelutItems = [
     { name: "Auton ohjelmointi", href: "/auton-ohjelmointi" },
@@ -42,10 +52,10 @@ export default function Navigation() {
             </Link>
 
             {/* Palvelut Dropdown */}
-            <div 
+            <div
               className="relative"
-              onMouseEnter={() => setPalvelutOpen(true)}
-              onMouseLeave={() => setPalvelutOpen(false)}
+              onMouseEnter={handlePalvelutEnter}
+              onMouseLeave={handlePalvelutLeave}
             >
               <button className="flex items-center gap-1.5 text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300">
                 Palvelut
@@ -53,7 +63,11 @@ export default function Navigation() {
               </button>
               
               {palvelutOpen && (
-                <div className="absolute top-full left-0 mt-4 w-60 bg-card border border-border py-3 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div
+                  className="absolute top-full left-0 mt-4 w-60 bg-card border border-border py-3 animate-in fade-in slide-in-from-top-2 duration-200"
+                  onMouseEnter={handlePalvelutEnter}
+                  onMouseLeave={handlePalvelutLeave}
+                >
                   {palvelutItems.map((item) => (
                     <Link
                       key={item.name}
