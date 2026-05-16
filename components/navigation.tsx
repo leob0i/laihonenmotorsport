@@ -3,16 +3,23 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [palvelutOpen, setPalvelutOpen] = useState(false)
+
+  const palvelutItems = [
+    { name: "Auton ohjelmointi", href: "/auton-ohjelmointi" },
+    { name: "Pakoputkistot", href: "/pakoputkistot" },
+    { name: "Huollot", href: "/huollot" },
+    { name: "Korjaukset ja vianhaku", href: "/korjaukset" },
+    { name: "Rengastyöt", href: "/rengastyot" },
+  ]
 
   const navItems = [
     { name: "Etusivu", href: "/" },
-    { name: "Palvelut", href: "/palvelut" },
     { name: "Premium-huollot", href: "/premium-huollot" },
-    { name: "Ohjelmointi", href: "/auton-ohjelmointi" },
     { name: "Meistä", href: "/meista" },
     { name: "Yhteystiedot", href: "/contact" },
   ]
@@ -31,15 +38,57 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
-              >
-                {item.name}
-              </Link>
-            ))}
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+            >
+              Etusivu
+            </Link>
+
+            {/* Palvelut Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setPalvelutOpen(true)}
+              onMouseLeave={() => setPalvelutOpen(false)}
+            >
+              <button className="flex items-center gap-1 text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
+                Palvelut
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${palvelutOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {palvelutOpen && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {palvelutItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/premium-huollot"
+              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+            >
+              Premium-huollot
+            </Link>
+            <Link
+              href="/meista"
+              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+            >
+              Meistä
+            </Link>
+            <Link
+              href="/contact"
+              className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200"
+            >
+              Yhteystiedot
+            </Link>
           </div>
 
           {/* CTA Button */}
@@ -62,16 +111,61 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
-                  onClick={() => setIsOpen(false)}
+              <Link
+                href="/"
+                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Etusivu
+              </Link>
+
+              {/* Mobile Palvelut Accordion */}
+              <div>
+                <button
+                  onClick={() => setPalvelutOpen(!palvelutOpen)}
+                  className="flex items-center justify-between w-full px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
                 >
-                  {item.name}
-                </Link>
-              ))}
+                  Palvelut
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${palvelutOpen ? "rotate-180" : ""}`} />
+                </button>
+                {palvelutOpen && (
+                  <div className="pl-4 space-y-1 mt-1">
+                    {palvelutItems.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="block px-4 py-2 text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200 text-sm"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link
+                href="/premium-huollot"
+                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Premium-huollot
+              </Link>
+              <Link
+                href="/meista"
+                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Meistä
+              </Link>
+              <Link
+                href="/contact"
+                className="block px-4 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Yhteystiedot
+              </Link>
+
               <div className="px-4 pt-4">
                 <Button
                   className="w-full bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white"
