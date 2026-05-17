@@ -15,7 +15,7 @@ export default function HeroSection() {
         "Ohjelmoinnit luotettavasti geevoimaa jälleenmyyjältä.",
       image: "/ecutuning.jpg",
       objectPosition: "center center",
-      overlayOpacity: "0.80",
+      overlayOpacity: "0.50",
       cta: "Varaa aika",
     },
     {
@@ -35,7 +35,7 @@ export default function HeroSection() {
         "Teemme custom putkistot ja muutkin hitsaus ja korin muutos työt ammattitaidolla ja tyylillä.",
       image: "/moottori.webp",
       objectPosition: "center center",
-      overlayOpacity: "0.80",
+      overlayOpacity: "0.50",
       cta: "Lue lisaa",
     },
   ]

@@ -8,60 +8,57 @@ export default function FocusAreas() {
   const areas = [
     {
       icon: Wrench,
-      title: "Maaraaikaishuollot",
-      description: "BMW ja Mercedes-Benz huollot alk. 499€",
-      stats: "Alk. 499€",
+      title: "Huollot",
+      description: "Erikoisosaamisemme on BMW-merkin huolto, mutta palvelemme ammattitaidolla kaikkia automerkkejä. Käytämme ainoastaan laadukkaita alkuperäis- tai vastaavia varaosia, jotka säilyttävät valmistajan takuun.",
       image: "/huollot.webp",
+      href: "/palvelut",
     },
     {
       icon: Car,
-      title: "Korjaukset",
-      description: "Kaikelle tyolle 2 vuoden takuu",
-      stats: "2v Takuu",
+      title: "Korjaukset ja vianhaku",
+      description: "Kattavat korjaukset ja vianhaku. Käytämme kaikissa töissämme vain laadukkaita varaosia varmistaaksemme autosi luotettavuuden ja pitkän käyttöiän.",
       image: "/bmw.tumma.korjaamo.jpeg",
+      href: "/palvelut",
     },
     {
-      icon: Settings,
-      title: "Varaosat",
-      description: "Alkuperaiset ja laadukkaat varaosat",
-      stats: "Alkuperais",
-      image: "/maantie.nmw.webp",
+       icon: Gauge,
+      title: "ECU- & vaihteisto-ohjelmoinnit",
+      description: "Ohjelmoinnit erityisesti BMW:lle ja Xhp vaihteistoille. Olemme Geevoiman virallinen jälleenmyyjä ja toteutamme myös yksilöllisen ohjelmoinnin.",
+      image: "/ecutuning.jpg",
+      href: "/palvelut",
     },
     {
       icon: Gauge,
-      title: "Diagnostiikka",
-      description: "Modernit diagnostiikkalaitteet",
-      stats: "Nykyaikainen",
-      image: "/ecutuning.jpg",
+      title: "Pakoputkisto",
+      description: "Alkuperäis-, custom- ja performanceputkistot sekä hitsaustyöt laadukkaasti ja näyttävästi. ",
+      image: "/maantie.nmw.webp",
+      href: "/palvelut",
     },
   ]
 
   return (
-    <section className="py-24 bg-card">
+    <section className="pb-24 pt-0 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <span className="text-primary text-xs tracking-ultra-wide uppercase font-medium">Palvelut</span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6 uppercase tracking-tight">
-            Mita tarjoamme
-          </h2>
-          <div className="w-16 h-0.5 bg-primary mx-auto"></div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+<div className="grid md:grid-cols-2 gap-6 mb-12">
           {areas.map((area, index) => (
             <div
               key={index}
-              className="group relative p-8 border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden"
+              className="group relative px-8 pt-8 pb-5 border border-border hover:border-primary/50 transition-all duration-500 overflow-hidden min-h-[280px] flex flex-col justify-end"
             >
               <img src={area.image} alt={area.title} className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/65 group-hover:bg-black/55 transition-colors duration-500"></div>
               <div className="relative z-10">
-                <div className="flex items-start justify-between mb-6">
-                  <area.icon className="w-10 h-10 text-primary" strokeWidth={1.5} />
-                  <span className="text-xs tracking-wider uppercase text-primary border border-primary/30 px-3 py-1">{area.stats}</span>
+                <area.icon className="w-12 h-12 text-primary mb-8" strokeWidth={1.5} />
+                <h3 className="font-display text-2xl font-semibold text-foreground mb-3 uppercase tracking-wide">{area.title}</h3>
+                <p className="text-muted-foreground text-base leading-relaxed mb-6">{area.description}</p>
+                <div className="flex justify-end">
+                  <Link href={area.href}>
+                    <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary hover:text-black text-xs tracking-widest uppercase px-6 py-2">
+                      Lue lisää
+                      <ArrowRight className="w-3 h-3 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3 uppercase tracking-wide">{area.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{area.description}</p>
               </div>
             </div>
           ))}
@@ -74,8 +71,8 @@ export default function FocusAreas() {
             <div className="flex items-center gap-6">
               <Wrench className="w-12 h-12 text-primary" strokeWidth={1.5} />
               <div>
-                <h3 className="font-display text-2xl font-bold text-foreground uppercase tracking-wide">Kaikki palvelut</h3>
-                <p className="text-muted-foreground text-sm mt-1">Katso kattava palveluvalikoimamme</p>
+                <h3 className="font-display text-2xl font-bold text-foreground uppercase tracking-wide">Rengastyöt ja rengashotelli</h3>
+                <p className="text-muted-foreground text-sm mt-1">Väännämme haastavimmatkin kumit paikoilleen naarmuja jättämättä. Myös kausivaihdot ja rengashotelli.</p>
               </div>
             </div>
             <Link href="/palvelut">
