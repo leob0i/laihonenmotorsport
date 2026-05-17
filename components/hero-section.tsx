@@ -87,8 +87,8 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 h-full flex items-center">
-        <div className="container mx-auto px-4">
+      <div className="relative z-20 h-full flex items-end md:items-center">
+        <div className="container mx-auto px-4 pb-28 md:pb-0">
           <div className="max-w-4xl">
             {slides.map((slide, index) => (
               <div
