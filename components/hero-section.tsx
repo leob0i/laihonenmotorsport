@@ -13,7 +13,7 @@ export default function HeroSection() {
       subtitle: "Joustava rahoitus",
       description:
         "Ohjelmoinnit luotettavasti geevoimaa jälleenmyyjältä.",
-      image: "/ecutuning.jpg",
+      image: "/moottori.webp",
       objectPosition: "center center",
       overlayOpacity: "0.50",
       cta: "Varaa aika",
@@ -24,6 +24,7 @@ export default function HeroSection() {
       description:
         "Meillä on vuosien kokemus bmw autoista. Tarjoamme kattavat korjaus- ja huoltopalvelut myös kaikille automerkeille.",
       image: "/huollot.webp",
+      mobileImage: "/bmw.hero.webp",
       objectPosition: "center 85%",
       overlayOpacity: "0.35",
       cta: "Katso huollot",
@@ -33,7 +34,7 @@ export default function HeroSection() {
       subtitle: "Tyolle ja varaosille",
       description:
         "Teemme custom putkistot ja muutkin hitsaus ja korin muutos työt ammattitaidolla ja tyylillä.",
-      image: "/moottori.webp",
+      image: "/pipes.webp",
       objectPosition: "center center",
       overlayOpacity: "0.50",
       cta: "Lue lisaa",
@@ -82,7 +83,12 @@ export default function HeroSection() {
           >
             <div className="absolute inset-0 z-10" style={{ backgroundColor: `rgba(0,0,0,${slide.overlayOpacity})` }}></div>
             <div className="absolute inset-x-0 bottom-0 h-2/5 z-10 bg-gradient-to-t from-black to-transparent"></div>
-            <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" style={{ objectPosition: slide.objectPosition }} />
+            <picture>
+                {slide.mobileImage && (
+                  <source media="(max-width: 767px)" srcSet={slide.mobileImage} />
+                )}
+                <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" style={{ objectPosition: slide.objectPosition }} />
+              </picture>
           </div>
         ))}
       </div>
