@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export default function MaaraaikaishuollotSection() {
   return (
     <section className="py-24 relative overflow-hidden">
-      <img src="/halli.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <img src="/halli.webp" alt="" className="absolute inset-0 w-full h-full object-cover object-left md:object-center" />
       <div className="absolute inset-0 bg-black/75"></div>
       <div className="container mx-auto px-4 relative z-10">
         <span className="text-primary text-xs tracking-ultra-wide uppercase font-medium">Miksi valita meidät?</span>
