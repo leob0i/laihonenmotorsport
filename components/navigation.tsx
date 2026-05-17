@@ -6,9 +6,32 @@ import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [menuMounted, setMenuMounted] = useState(false)
+  const [menuVisible, setMenuVisible] = useState(false)
   const [palvelutOpen, setPalvelutOpen] = useState(false)
   const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const closeMenuTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const isOpen = menuMounted
+
+  const openMenu = () => {
+    if (closeMenuTimeout.current) clearTimeout(closeMenuTimeout.current)
+    setMenuMounted(true)
+    requestAnimationFrame(() => requestAnimationFrame(() => setMenuVisible(true)))
+  }
+
+  const closeMenu = () => {
+    setMenuVisible(false)
+    closeMenuTimeout.current = setTimeout(() => {
+      setMenuMounted(false)
+      setPalvelutOpen(false)
+    }, 300)
+  }
+
+  const toggleMenu = () => {
+    if (menuMounted) closeMenu()
+    else openMenu()
+  }
 
   const handlePalvelutEnter = () => {
     if (closeTimeout.current) clearTimeout(closeTimeout.current)
@@ -106,19 +129,23 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-foreground">
+          <button onClick={toggleMenu} className="md:hidden p-2 text-foreground">
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-6 border-t border-border/50">
+        {menuMounted && (
+          <div
+            className={`md:hidden py-8 border-t border-border/50 transition-all duration-300 ease-out ${
+              menuVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
+            }`}
+          >
             <div className="space-y-1">
               <Link
                 href="/"
-                className="block px-4 py-3 text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
+                className="block px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                onClick={closeMenu}
               >
                 Etusivu
               </Link>
@@ -127,10 +154,10 @@ export default function Navigation() {
               <div>
                 <button
                   onClick={() => setPalvelutOpen(!palvelutOpen)}
-                  className="flex items-center justify-between w-full px-4 py-3 text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                  className="flex items-center justify-between w-full px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   Palvelut
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${palvelutOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${palvelutOpen ? "rotate-180" : ""}`} />
                 </button>
                 {palvelutOpen && (
                   <div className="pl-4 space-y-1 border-l border-primary/30 ml-4">
@@ -138,8 +165,8 @@ export default function Navigation() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-4 py-2.5 text-sm tracking-wide text-muted-foreground hover:text-primary transition-colors duration-200"
-                        onClick={() => setIsOpen(false)}
+                        className="block px-4 py-3 text-base tracking-wide text-muted-foreground hover:text-primary transition-colors duration-200"
+                        onClick={closeMenu}
                       >
                         {item.name}
                       </Link>
@@ -150,22 +177,22 @@ export default function Navigation() {
 
               <Link
                 href="/meista"
-                className="block px-4 py-3 text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
+                className="block px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                onClick={closeMenu}
               >
                 Meista
               </Link>
               <Link
                 href="/contact"
-                className="block px-4 py-3 text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
+                className="block px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                onClick={closeMenu}
               >
                 Yhteystiedot
               </Link>
 
               <div className="px-4 pt-6">
                 <Button
-                  className="w-full bg-primary hover:bg-primary-600 text-black font-semibold text-xs tracking-widest uppercase py-5"
+                  className="w-full bg-primary hover:bg-primary-600 text-black font-semibold text-sm tracking-widest uppercase py-6"
                   onClick={() => (window.location.href = "/contact")}
                 >
                   Varaa aika
