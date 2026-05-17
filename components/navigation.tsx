@@ -203,7 +203,7 @@ export default function Navigation() {
                 Yhteystiedot
               </Link>
 
-              <div className="px-4 pt-6 space-y-3">
+              <div className="px-4 pt-6 pb-4 space-y-3 bg-black/40">
                 <Button
                   className="w-full bg-primary hover:bg-primary-600 text-black font-semibold text-sm tracking-widest uppercase py-6"
                   onClick={() => (window.location.href = "/contact")}
@@ -216,10 +216,10 @@ export default function Navigation() {
                 >
                   Soita
                 </Button>
-              </div>
-              <div className="flex justify-center items-center gap-8 px-4 pt-6 pb-2">
-                <img src="/mekonem.png" alt="Mekonomen" className="h-8 w-auto object-contain opacity-70" />
-                <img src="/mperformance.webp" alt="M Performance" className="h-8 w-auto object-contain opacity-70" />
+                <div className="flex justify-center items-center gap-14 pt-3 pb-1">
+                  <img src="/mekonem.png" alt="Mekonomen" className="h-8 w-auto object-contain opacity-70" />
+                  <img src="/geevoima.png" alt="Geevoima" className="h-8 w-auto object-contain opacity-70" />
+                </div>
               </div>
             </div>
           </div>
