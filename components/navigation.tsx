@@ -61,7 +61,7 @@ export default function Navigation() {
                 Palvelut
                 <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${palvelutOpen ? "rotate-180" : ""}`} />
               </button>
-              
+
               {palvelutOpen && (
                 <div
                   className="absolute top-full left-0 mt-4 w-60 bg-card border border-border py-3 animate-in fade-in slide-in-from-top-2 duration-200"
@@ -81,12 +81,6 @@ export default function Navigation() {
               )}
             </div>
 
-            <Link
-              href="/premium-huollot"
-              className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              Premium
-            </Link>
             <Link
               href="/meista"
               className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -154,13 +148,6 @@ export default function Navigation() {
                 )}
               </div>
 
-              <Link
-                href="/premium-huollot"
-                className="block px-4 py-3 text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Premium
-              </Link>
               <Link
                 href="/meista"
                 className="block px-4 py-3 text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"

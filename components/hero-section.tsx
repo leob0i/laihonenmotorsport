@@ -81,6 +81,7 @@ export default function HeroSection() {
             }`}
           >
             <div className="absolute inset-0 z-10" style={{ backgroundColor: `rgba(0,0,0,${slide.overlayOpacity})` }}></div>
+            <div className="absolute inset-x-0 bottom-0 h-2/5 z-10 bg-gradient-to-t from-black to-transparent"></div>
             <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" style={{ objectPosition: slide.objectPosition }} />
           </div>
         ))}
@@ -98,7 +99,7 @@ export default function HeroSection() {
                 }`}
                 style={{ display: index === currentSlide ? "block" : "none" }}
               >
-                <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight uppercase animate-slide-up">
+                <h1 className={`font-display ${index === 0 ? "text-5xl md:text-6xl lg:text-7xl" : "text-5xl md:text-7xl lg:text-8xl"} font-bold text-white mb-6 tracking-tight uppercase animate-slide-up`}>
                   {slide.title}
                 </h1>
                 <p className="text-lg text-white/60 mb-10 max-w-xl leading-relaxed font-light animate-slide-up-delay">

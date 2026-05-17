@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Wrench, Car, Settings, Gauge, ArrowRight } from "lucide-react"
+import { Wrench, Car, Settings, Gauge, Wind, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function FocusAreas() {
@@ -28,10 +28,10 @@ export default function FocusAreas() {
       href: "/palvelut",
     },
     {
-      icon: Gauge,
+      icon: Wind,
       title: "Pakoputkisto",
       description: "Alkuperäis-, custom- ja performanceputkistot sekä hitsaustyöt laadukkaasti ja näyttävästi. ",
-      image: "/maantie.nmw.webp",
+      image: "/putket.jpg",
       href: "/palvelut",
     },
   ]
@@ -65,7 +65,7 @@ export default function FocusAreas() {
         </div>
 
         <div className="relative p-10 border border-primary/30 overflow-hidden">
-          <img src="/moottori.webp" alt="Palvelut" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/rengas.webp" alt="Palvelut" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/70"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-6">

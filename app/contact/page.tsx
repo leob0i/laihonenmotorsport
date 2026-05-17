@@ -1,9 +1,7 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -27,9 +25,7 @@ export default function ContactPage() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
 
@@ -37,10 +33,10 @@ export default function ContactPage() {
         setSubmitted(true)
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
       } else {
-        alert("Failed to send message. Please try again.")
+        alert("Viestin lähetys epäonnistui. Yritä uudelleen.")
       }
-    } catch (error) {
-      alert("Error sending message. Please try again.")
+    } catch {
+      alert("Viestin lähetys epäonnistui. Yritä uudelleen.")
     } finally {
       setIsSubmitting(false)
     }
@@ -49,201 +45,169 @@ export default function ContactPage() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-blue-50 to-teal-50">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-blue-600 opacity-90"></div>
-        <div className="relative container mx-auto px-4 text-center text-white">
-          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl max-w-3xl mx-auto leading-relaxed">
-            Get in touch with us to learn more about BFAJK&GB and how you can be part of our mission
+    <div className="min-h-screen bg-background">
+      {/* Hero */}
+      <section className="relative py-28 border-b border-border/50">
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/0 via-primary to-primary/0" />
+        <div className="container mx-auto px-4">
+          <p className="text-primary text-xs tracking-widest uppercase mb-4 font-display">Leon Korjaamo</p>
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground tracking-tight uppercase">
+            Ota yhteyttä
+          </h1>
+          <p className="text-muted-foreground mt-6 max-w-xl text-base leading-relaxed font-light">
+            Varaa aika, kysy tarjous tai ota yhteyttä — vastaamme nopeasti.
           </p>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                We're here to help you connect with our business community and explore opportunities for collaboration
-                and growth. Reach out to us through any of the following channels.
-              </p>
+      <div className="container mx-auto px-4 py-20">
+        <div className="grid lg:grid-cols-2 gap-16 max-w-6xl">
+
+          {/* Yhteystiedot */}
+          <div className="space-y-4">
+            <h2 className="font-display text-2xl font-bold text-foreground uppercase tracking-wide mb-8">
+              Yhteystiedot
+            </h2>
+
+            <div className="flex items-start gap-5 py-5 border-b border-border/50">
+              <div className="w-10 h-10 border border-primary flex items-center justify-center shrink-0">
+                <MapPin className="w-4 h-4 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-1">Osoite</p>
+                <p className="text-foreground">Esimerkkikatu 1, 00100 Helsinki</p>
+              </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&h=400&fit=crop"
-                  alt="Business collaboration"
-                  className="rounded-lg shadow-lg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/20 to-transparent rounded-lg"></div>
+            <div className="flex items-start gap-5 py-5 border-b border-border/50">
+              <div className="w-10 h-10 border border-primary flex items-center justify-center shrink-0">
+                <Phone className="w-4 h-4 text-primary" />
               </div>
+              <div>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-1">Puhelin</p>
+                <p className="text-foreground">+358 40 123 4567</p>
+              </div>
+            </div>
 
-              <Card className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-blue-500 flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800">Address</h3>
-                      <p className="text-gray-600">Muzaffarabad, Azad Jammu & Kashmir</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="flex items-start gap-5 py-5 border-b border-border/50">
+              <div className="w-10 h-10 border border-primary flex items-center justify-center shrink-0">
+                <Mail className="w-4 h-4 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-1">Sähköposti</p>
+                <p className="text-foreground">info@leonkorjaamo.fi</p>
+              </div>
+            </div>
 
-              <Card className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-blue-500 flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800">Phone</h3>
-                      <p className="text-gray-600">+92-XXX-XXXXXXX</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-blue-500 flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800">Email</h3>
-                      <p className="text-gray-600">info@bfajkgb.org</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-emerald-500 to-blue-500 flex items-center justify-center">
-                      <Clock className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800">Office Hours</h3>
-                      <p className="text-gray-600">Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="flex items-start gap-5 py-5 border-b border-border/50">
+              <div className="w-10 h-10 border border-primary flex items-center justify-center shrink-0">
+                <Clock className="w-4 h-4 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs tracking-widest uppercase text-muted-foreground mb-1">Aukioloajat</p>
+                <p className="text-foreground">Ma–Pe 8:00–17:00</p>
+                <p className="text-muted-foreground text-sm">La–Su suljettu</p>
+              </div>
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Lomake */}
           <div>
-            <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-2xl">
-              <CardHeader>
-                <CardTitle className="text-2xl text-gray-800">Send us a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {submitted ? (
-                  <div className="text-center py-8">
-                    <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                      <Send className="w-8 h-8 text-green-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">Message Sent!</h3>
-                    <p className="text-gray-600">Thank you for contacting us. We'll get back to you soon.</p>
+            <h2 className="font-display text-2xl font-bold text-foreground uppercase tracking-wide mb-8">
+              Lähetä viesti
+            </h2>
+
+            {submitted ? (
+              <div className="border border-primary/30 bg-card p-12 text-center">
+                <div className="w-12 h-12 border border-primary flex items-center justify-center mx-auto mb-6">
+                  <Send className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-foreground uppercase mb-2">Viesti lähetetty</h3>
+                <p className="text-muted-foreground text-sm">Olemme sinuun yhteydessä pian.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">Nimi *</label>
+                    <Input
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="bg-card border-border focus:border-primary rounded-none"
+                    />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                        <Input
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                        <Input
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        />
-                      </div>
-                    </div>
+                  <div>
+                    <label className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">Sähköposti *</label>
+                    <Input
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="bg-card border-border focus:border-primary rounded-none"
+                    />
+                  </div>
+                </div>
 
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                        <Input
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                        <Input
-                          name="subject"
-                          value={formData.subject}
-                          onChange={handleChange}
-                          required
-                          className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                        />
-                      </div>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">Puhelinnumero</label>
+                    <Input
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="bg-card border-border focus:border-primary rounded-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">Aihe *</label>
+                    <Input
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="bg-card border-border focus:border-primary rounded-none"
+                    />
+                  </div>
+                </div>
 
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                      <Textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={5}
-                        className="border-gray-300 focus:border-emerald-500 focus:ring-emerald-500"
-                      />
-                    </div>
+                <div>
+                  <label className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">Viesti *</label>
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="bg-card border-border focus:border-primary rounded-none resize-none"
+                  />
+                </div>
 
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-semibold py-3"
-                    >
-                      {isSubmitting ? (
-                        <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                          Sending...
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-2">
-                          <Send className="w-4 h-4" />
-                          Send Message
-                        </div>
-                      )}
-                    </Button>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-primary hover:bg-primary/90 text-black font-semibold px-10 py-6 text-xs tracking-widest uppercase rounded-none w-full"
+                >
+                  {isSubmitting ? (
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 border-2 border-black border-t-transparent rounded-full animate-spin" />
+                      Lähetetään...
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <Send className="w-4 h-4" />
+                      Lähetä viesti
+                    </div>
+                  )}
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>
