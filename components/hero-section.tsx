@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, ArrowRight, Wrench, Shield, Award } from "lucide-react"
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -17,6 +17,9 @@ export default function HeroSection() {
       objectPosition: "center center",
       overlayOpacity: "0.50",
       cta: "Varaa aika",
+      featureIcon: Wrench,
+      featureTitle: "BMW-erikoisosaaminen",
+      featureDescription: "Huollot, ohjelmoinnit ja performance-ratkaisut kokemuksella.",
     },
     {
       title: "Huollot",
@@ -28,6 +31,9 @@ export default function HeroSection() {
       objectPosition: "center 85%",
       overlayOpacity: "0.35",
       cta: "Katso huollot",
+      featureIcon: Shield,
+      featureTitle: "3 vuoden varaosatakuu",
+      featureDescription: "Mekonomenin laadukkaat varaosat ja uuden auton takuu säilyy.",
     },
     {
       title: "Pakoputkistot",
@@ -38,6 +44,9 @@ export default function HeroSection() {
       objectPosition: "center center",
       overlayOpacity: "0.50",
       cta: "Lue lisaa",
+      featureIcon: Award,
+      featureTitle: "Geevoimaa jälleenmyyjä",
+      featureDescription: "Viritys-osat ja ohjelmoinnit luotettavasti",
     },
   ]
 
@@ -108,9 +117,16 @@ export default function HeroSection() {
                 <h1 className={`font-display ${index === 0 ? "text-5xl md:text-6xl lg:text-7xl" : "text-5xl md:text-7xl lg:text-8xl"} font-bold text-white mb-6 tracking-tight uppercase animate-slide-up`}>
                   {slide.title}
                 </h1>
-                <p className="text-lg text-white/60 mb-10 max-w-xl leading-relaxed font-light animate-slide-up-delay">
+                <p className="text-lg text-white/60 mb-6 max-w-xl leading-relaxed font-light animate-slide-up-delay">
                   {slide.description}
                 </p>
+                <div className="flex items-start gap-3 mb-8 animate-slide-up-delay">
+                  <slide.featureIcon className="w-5 h-5 text-primary mt-0.5 shrink-0" strokeWidth={1.5} />
+                  <div>
+                    <p className="text-sm font-semibold text-white uppercase tracking-wide">{slide.featureTitle}</p>
+                    <p className="text-sm text-white/50">{slide.featureDescription}</p>
+                  </div>
+                </div>
                 <div className="flex flex-col sm:flex-row gap-4 animate-slide-up-delay-2">
                   <Button
                     size="lg"
