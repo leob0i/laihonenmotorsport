@@ -217,6 +217,10 @@ export default function Navigation() {
                   Soita
                 </Button>
               </div>
+              <div className="flex justify-center items-center gap-8 px-4 pt-6 pb-2">
+                <img src="/mekonem.png" alt="Mekonomen" className="h-8 w-auto object-contain opacity-70" />
+                <img src="/mperformance.webp" alt="M Performance" className="h-8 w-auto object-contain opacity-70" />
+              </div>
             </div>
           </div>
         )}
