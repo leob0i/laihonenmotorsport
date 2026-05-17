@@ -103,7 +103,7 @@ export default function Footer() {
 
         <div className="border-t border-border mt-16 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-xs tracking-wide">© 2024 Leon Korjaamo</p>
+            <p className="text-muted-foreground text-xs tracking-wide">© 2026 Leon Korjaamo</p>
             <div className="flex space-x-8">
               <Link href="#" className="text-muted-foreground hover:text-primary text-xs tracking-wide transition-colors duration-300">
                 Tietosuoja

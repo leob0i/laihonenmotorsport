@@ -73,6 +73,12 @@ export default function Navigation() {
             >
               Etusivu
             </Link>
+            <Link
+              href="/huollot"
+              className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+            >
+              Huollot
+            </Link>
 
             {/* Palvelut Dropdown */}
             <div
@@ -144,17 +150,24 @@ export default function Navigation() {
             <div className="space-y-1">
               <Link
                 href="/"
-                className="block px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
                 onClick={closeMenu}
               >
                 Etusivu
+              </Link>
+              <Link
+                href="/huollot"
+                className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                onClick={closeMenu}
+              >
+                Huollot
               </Link>
 
               {/* Mobile Palvelut Accordion */}
               <div>
                 <button
                   onClick={() => setPalvelutOpen(!palvelutOpen)}
-                  className="flex items-center justify-between w-full px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                  className="flex items-center justify-between w-full px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   Palvelut
                   <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${palvelutOpen ? "rotate-180" : ""}`} />
@@ -165,7 +178,7 @@ export default function Navigation() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block px-4 py-3 text-base tracking-wide text-muted-foreground hover:text-primary transition-colors duration-200"
+                        className="block px-4 py-3 text-lg tracking-wide text-muted-foreground hover:text-primary transition-colors duration-200"
                         onClick={closeMenu}
                       >
                         {item.name}
@@ -177,25 +190,31 @@ export default function Navigation() {
 
               <Link
                 href="/meista"
-                className="block px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
                 onClick={closeMenu}
               >
                 Meista
               </Link>
               <Link
                 href="/contact"
-                className="block px-4 py-4 text-base tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+                className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
                 onClick={closeMenu}
               >
                 Yhteystiedot
               </Link>
 
-              <div className="px-4 pt-6">
+              <div className="px-4 pt-6 space-y-3">
                 <Button
                   className="w-full bg-primary hover:bg-primary-600 text-black font-semibold text-sm tracking-widest uppercase py-6"
                   onClick={() => (window.location.href = "/contact")}
                 >
                   Varaa aika
+                </Button>
+                <Button
+                  className="w-full bg-transparent border border-primary text-primary hover:bg-primary hover:text-black font-semibold text-sm tracking-widest uppercase py-6 transition-all duration-300"
+                  onClick={() => (window.location.href = "tel:+358401234567")}
+                >
+                  Soita
                 </Button>
               </div>
             </div>
