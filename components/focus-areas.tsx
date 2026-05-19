@@ -52,7 +52,7 @@ export default function FocusAreas() {
                 <h3 className="font-display text-2xl font-semibold text-foreground mb-3 uppercase tracking-wide">{area.title}</h3>
                 <p className="text-muted-foreground text-base leading-relaxed mb-6">{area.description}</p>
                 <div className="flex justify-end">
-                  <Link href={area.href}>
+                  <Link href={area.href} onClick={(e) => e.preventDefault()}>
                     <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary hover:text-black text-xs tracking-widest uppercase px-6 py-2">
                       Lue lisää
                       <ArrowRight className="w-3 h-3 ml-2" />
@@ -75,7 +75,7 @@ export default function FocusAreas() {
                 <p className="text-muted-foreground text-sm mt-1">Väännämme haastavimmatkin kumit paikoilleen naarmuja jättämättä. Myös kausivaihdot ja rengashotelli.</p>
               </div>
             </div>
-            <Link href="/palvelut">
+            <Link href="/palvelut" onClick={(e) => e.preventDefault()}>
               <Button className="bg-primary hover:bg-primary-600 text-black font-semibold px-8 py-6 text-xs tracking-widest uppercase">
                 Katso palvelut
                 <ArrowRight className="w-4 h-4 ml-2" />

@@ -50,19 +50,7 @@ export default function HeroSection() {
     },
   ]
 
-  const handleCTAClick = (cta: string) => {
-    switch (cta) {
-      case "Varaa aika":
-        window.location.href = "/contact"
-        break
-      case "Katso huollot":
-        window.location.href = "/premium-huollot"
-        break
-      case "Lue lisaa":
-        window.location.href = "/palvelut"
-        break
-    }
-  }
+  const handleCTAClick = (_cta: string) => {}
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -140,7 +128,7 @@ export default function HeroSection() {
                     size="lg"
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10 hover:border-white font-medium px-10 py-6 text-sm tracking-wider uppercase"
-                    onClick={() => window.location.href = "/contact"}
+                    onClick={() => {}}
                   >
                     Ota yhteytta
                   </Button>

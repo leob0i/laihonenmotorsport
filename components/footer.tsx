@@ -42,10 +42,10 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { name: "Etusivu", href: "/" },
-                { name: "Palvelut", href: "/palvelut" },
-                { name: "Premium", href: "/premium-huollot" },
-                { name: "Meista", href: "/meista" },
-                { name: "Yhteystiedot", href: "/contact" },
+                { name: "Palvelut", href: "/" },
+                { name: "Premium", href: "/" },
+                { name: "Meista", href: "/" },
+                { name: "Yhteystiedot", href: "/" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary text-sm transition-colors duration-300">

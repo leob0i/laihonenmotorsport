@@ -76,6 +76,7 @@ export default function Navigation() {
             <Link
               href="/huollot"
               className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+              onClick={(e) => e.preventDefault()}
             >
               Huollot
             </Link>
@@ -102,6 +103,7 @@ export default function Navigation() {
                       key={item.name}
                       href={item.href}
                       className="block px-5 py-2.5 text-sm tracking-wide text-muted-foreground hover:text-primary hover:bg-background transition-colors duration-200"
+                      onClick={(e) => e.preventDefault()}
                     >
                       {item.name}
                     </Link>
@@ -113,12 +115,14 @@ export default function Navigation() {
             <Link
               href="/meista"
               className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+              onClick={(e) => e.preventDefault()}
             >
               Meista
             </Link>
             <Link
               href="/contact"
               className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
+              onClick={(e) => e.preventDefault()}
             >
               Yhteystiedot
             </Link>
@@ -128,7 +132,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Button
               className="bg-transparent border border-primary text-primary hover:bg-primary hover:text-black px-8 py-5 text-xs tracking-widest uppercase transition-all duration-300"
-              onClick={() => (window.location.href = "/contact")}
+              onClick={() => {}}
             >
               Varaa aika
             </Button>
@@ -158,7 +162,7 @@ export default function Navigation() {
               <Link
                 href="/huollot"
                 className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={closeMenu}
+                onClick={(e) => { e.preventDefault(); closeMenu() }}
               >
                 Huollot
               </Link>
@@ -179,7 +183,7 @@ export default function Navigation() {
                         key={item.name}
                         href={item.href}
                         className="block px-4 py-3 text-lg tracking-wide text-muted-foreground hover:text-primary transition-colors duration-200"
-                        onClick={closeMenu}
+                        onClick={(e) => { e.preventDefault(); closeMenu() }}
                       >
                         {item.name}
                       </Link>
@@ -191,14 +195,14 @@ export default function Navigation() {
               <Link
                 href="/meista"
                 className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={closeMenu}
+                onClick={(e) => { e.preventDefault(); closeMenu() }}
               >
                 Meista
               </Link>
               <Link
                 href="/contact"
                 className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={closeMenu}
+                onClick={(e) => { e.preventDefault(); closeMenu() }}
               >
                 Yhteystiedot
               </Link>
@@ -206,13 +210,13 @@ export default function Navigation() {
               <div className="px-4 pt-6 space-y-3">
                 <Button
                   className="w-full bg-primary hover:bg-primary-600 text-black font-semibold text-sm tracking-widest uppercase py-6"
-                  onClick={() => (window.location.href = "/contact")}
+                  onClick={() => {}}
                 >
                   Varaa aika
                 </Button>
                 <Button
                   className="w-full bg-transparent border border-primary text-primary hover:bg-primary hover:text-black font-semibold text-sm tracking-widest uppercase py-6 transition-all duration-300"
-                  onClick={() => (window.location.href = "tel:+358401234567")}
+                  onClick={() => {}}
                 >
                   Soita
                 </Button>

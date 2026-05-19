@@ -25,7 +25,7 @@ export default function MaaraaikaishuollotSection() {
         </div>
       </div>
       <div className="absolute bottom-8 right-8 z-10">
-        <Link href="/meista">
+        <Link href="/">
           <Button variant="outline" className="border-primary/50 text-primary hover:bg-primary hover:text-black text-xs tracking-widest uppercase px-6 py-2">
             Lue lisää meistä
             <ArrowRight className="w-3 h-3 ml-2" />
