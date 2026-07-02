@@ -10,11 +10,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-8">
               <div className="w-10 h-10 border border-primary flex items-center justify-center">
-                <span className="text-primary font-display font-bold text-lg">LK</span>
+                <span className="text-primary font-display font-bold text-lg">JK</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-lg tracking-wider text-foreground uppercase">Leon</span>
-                <span className="text-[10px] tracking-ultra-wide text-muted-foreground uppercase">Korjaamo</span>
+                <span className="font-display font-bold text-lg tracking-wider text-foreground uppercase">JK</span>
+                <span className="text-[10px] tracking-ultra-wide text-muted-foreground uppercase">Performance</span>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-8">
@@ -88,7 +88,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground text-sm">info@leonkorjaamo.fi</span>
+                <span className="text-muted-foreground text-sm">info@jkperformance.fi</span>
               </div>
               <div className="flex items-start gap-4">
                 <Clock className="w-4 h-4 text-primary mt-0.5" />
@@ -103,7 +103,7 @@ export default function Footer() {
 
         <div className="border-t border-border mt-16 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-xs tracking-wide">© 2026 Leon Korjaamo</p>
+            <p className="text-muted-foreground text-xs tracking-wide">© 2026 JK Performance</p>
             <div className="flex space-x-8">
               <Link href="#" className="text-muted-foreground hover:text-primary text-xs tracking-wide transition-colors duration-300">
                 Tietosuoja

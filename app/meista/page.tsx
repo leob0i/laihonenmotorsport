@@ -51,7 +51,7 @@ const team = [
   {
     name: "Janne",
     role: "Mekaanikko",
-    description: "BMW ja Mercedes-Benz -spesialisti.",
+    description: "Premium-merkkien spesialisti.",
   },
 ]
 
@@ -65,7 +65,7 @@ export default function MeistaPage() {
           <div className="absolute inset-0">
             <img
               src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=1920&h=1080&fit=crop"
-              alt="Leon Korjaamo"
+              alt="JK Performance"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80"></div>
@@ -80,7 +80,7 @@ export default function MeistaPage() {
               </div>
               
               <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground mb-6 leading-none tracking-tight uppercase">
-                Leon Korjaamo
+                JK Performance
               </h1>
               
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
@@ -140,9 +140,9 @@ export default function MeistaPage() {
 
               <div className="space-y-6">
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Leon Korjaamo perustettiin intohimosta autoja kohtaan ja halusta tarjota 
-                  asiakkaille parasta mahdollista palvelua. Olemme erikoistuneet 
-                  premium-merkkeihin kuten BMW ja Mercedes-Benz, mutta huollamme kaikki merkit.
+                  JK Performance perustettiin intohimosta autoja kohtaan ja halusta tarjota
+                  asiakkaille parasta mahdollista palvelua. Olemme erikoistuneet
+                  premium-merkkeihin, mutta huollamme kaikki merkit.
                 </p>
                 <p className="text-muted-foreground text-lg leading-relaxed">
                   Meillä on käytössä alan uusimmat diagnostiikkalaitteet ja merkkikohtaiset 
@@ -192,7 +192,7 @@ export default function MeistaPage() {
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="font-display text-4xl font-bold text-foreground mb-4 tracking-tight uppercase">Miksi Leon Korjaamo?</h2>
+              <h2 className="font-display text-4xl font-bold text-foreground mb-4 tracking-tight uppercase">Miksi JK Performance?</h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">

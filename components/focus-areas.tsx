@@ -9,8 +9,8 @@ export default function FocusAreas() {
     {
       icon: Wrench,
       title: "Huollot",
-      description: "Erikoisosaamisemme on BMW-merkin huolto, mutta palvelemme ammattitaidolla kaikkia automerkkejä. Käytämme ainoastaan laadukkaita alkuperäis- tai vastaavia varaosia, jotka säilyttävät valmistajan takuun.",
-      image: "/huollot.webp",
+      description: "Palvelemme ammattitaidolla kaikkia automerkkejä. Käytämme ainoastaan laadukkaita alkuperäis- tai vastaavia varaosia, jotka säilyttävät valmistajan takuun.",
+      image: "/tim-meyer-lre9kVnX9Tg-unsplash.jpg",
       href: "/palvelut",
     },
     {
@@ -23,14 +23,14 @@ export default function FocusAreas() {
     {
        icon: Gauge,
       title: "ECU- & vaihteisto-ohjelmoinnit",
-      description: "Ohjelmoinnit erityisesti BMW:lle ja Xhp vaihteistoille. Olemme Geevoiman virallinen jälleenmyyjä ja toteutamme myös yksilöllisen ohjelmoinnin.",
+      description: "Ohjelmoinnit erityisesti Xhp vaihteistoille. Toteutamme myös yksilöllisen ohjelmoinnin.",
       image: "/ecutuning.jpg",
       href: "/palvelut",
     },
     {
       icon: Wind,
       title: "Pakoputkisto",
-      description: "Alkuperäis-, custom- ja performanceputkistot sekä hitsaustyöt laadukkaasti ja näyttävästi. ",
+      description: "Alkuperäis-, custom- ja performanceputkistot sekä hitsaustyöt laadukkaasti ja näyttävästi. Myös EGR/DPF-poistot.",
       image: "/putket.jpg",
       href: "/palvelut",
     },

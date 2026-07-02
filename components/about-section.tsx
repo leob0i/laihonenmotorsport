@@ -8,7 +8,7 @@ export default function AboutSection() {
           {[
             {
               icon: Wrench,
-              title: "BMW-erikoisosaaminen",
+              title: "Huolto- ja ohjelmointiosaaminen",
               description: "Huollot, ohjelmoinnit ja performance-ratkaisut kokemuksella.",
             },
             {
@@ -18,8 +18,8 @@ export default function AboutSection() {
             },
             {
               icon: Award,
-              title: "Geevoimaa jälleenmyyjä",
-              description: "Viritys-osat ja ohjelmoinnit luotettavasti",
+              title: "Putkistot ja hitsaus",
+              description: "Custom-putkistot ja hitsaustyöt ammattitaidolla.",
             },
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-4">

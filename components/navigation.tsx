@@ -57,11 +57,11 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 border border-primary flex items-center justify-center">
-              <span className="text-primary font-display font-bold text-lg">LK</span>
+              <span className="text-primary font-display font-bold text-lg">JK</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-lg tracking-wider text-foreground uppercase">Leon</span>
-              <span className="text-[10px] tracking-ultra-wide text-muted-foreground uppercase">Korjaamo</span>
+              <span className="font-display font-bold text-lg tracking-wider text-foreground uppercase">JK</span>
+              <span className="text-[10px] tracking-ultra-wide text-muted-foreground uppercase">Performance</span>
             </div>
           </Link>
 
@@ -221,9 +221,8 @@ export default function Navigation() {
                   Soita
                 </Button>
               </div>
-              <div className="flex justify-center items-center gap-14 bg-black/40 px-4 py-4 -mx-4">
+              <div className="flex justify-center items-center bg-black/40 px-4 py-4 -mx-4">
                 <img src="/mekonem.png" alt="Mekonomen" className="h-8 w-auto object-contain opacity-70" />
-                <img src="/geevoima.png" alt="Geevoima" className="h-8 w-auto object-contain opacity-70" />
               </div>
             </div>
           </div>

@@ -9,25 +9,24 @@ export default function HeroSection() {
 
   const slides = [
     {
-      title: "Xhp-vaihdelaatikko ja ohjelmoinnit",
+      title: "Ohjelmoinnit Alkaen 320€",
       subtitle: "Joustava rahoitus",
       description:
-        "Ohjelmoinnit luotettavasti geevoimaa jälleenmyyjältä.",
+        "Ohjelmoinnit luotettavasti ja ammattitaidolla.",
       image: "/moottori.webp",
       objectPosition: "center center",
       overlayOpacity: "0.50",
       cta: "Varaa aika",
       featureIcon: Wrench,
-      featureTitle: "BMW-erikoisosaaminen",
+      featureTitle: "Ohjelmointierikoisosaaminen",
       featureDescription: "Huollot, ohjelmoinnit ja performance-ratkaisut kokemuksella.",
     },
     {
       title: "Huollot",
       subtitle: "Maaraaikaishuollot alk. 499€",
       description:
-        "Meillä on vuosien kokemus bmw autoista. Tarjoamme kattavat korjaus- ja huoltopalvelut myös kaikille automerkeille.",
-      image: "/huollot.webp",
-      mobileImage: "/bmw.hero.webp",
+        "Meillä on vuosien kokemus autokorjauksesta. Tarjoamme kattavat korjaus- ja huoltopalvelut kaikille automerkeille.",
+      image: "/bmw.hero.webp",
       objectPosition: "center 85%",
       overlayOpacity: "0.35",
       cta: "Katso huollot",
@@ -45,8 +44,8 @@ export default function HeroSection() {
       overlayOpacity: "0.50",
       cta: "Lue lisaa",
       featureIcon: Award,
-      featureTitle: "Geevoimaa jälleenmyyjä",
-      featureDescription: "Viritys-osat ja ohjelmoinnit luotettavasti",
+      featureTitle: "Putkistot ja hitsaus",
+      featureDescription: "Custom-putkistot ja hitsaustyöt ammattitaidolla.",
     },
   ]
 
@@ -80,12 +79,7 @@ export default function HeroSection() {
           >
             <div className="absolute inset-0 z-10" style={{ backgroundColor: `rgba(0,0,0,${slide.overlayOpacity})` }}></div>
             <div className="absolute inset-x-0 bottom-0 h-2/5 z-10 bg-gradient-to-t from-black to-transparent"></div>
-            <picture>
-                {slide.mobileImage && (
-                  <source media="(max-width: 767px)" srcSet={slide.mobileImage} />
-                )}
-                <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" style={{ objectPosition: slide.objectPosition }} />
-              </picture>
+            <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" style={{ objectPosition: slide.objectPosition }} />
           </div>
         ))}
       </div>
@@ -136,6 +130,16 @@ export default function HeroSection() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Opening Hours - fixed overlay, independent of slide content so it never changes/reloads on slide switch */}
+      <div className="absolute bottom-6 inset-x-0 z-20 pointer-events-none">
+        <div className="container mx-auto px-4">
+          <p className="text-white/60 text-xs sm:text-sm tracking-widest uppercase font-light">
+            <span>MA - PE 08:00 - 17:00</span>
+            <span className="ml-6">LA - SU KIINNI</span>
+          </p>
         </div>
       </div>
 

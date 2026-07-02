@@ -18,7 +18,7 @@ export default function NewsSection() {
       image: "/moottori.webp",
     },
     {
-      title: "BMW & Mercedes erikoishuollot",
+      title: "Premium-merkkien erikoishuollot",
       excerpt: "Laajennettu premium-merkkien huoltovalikoima.",
       date: "01.2024",
       category: "Palvelut",

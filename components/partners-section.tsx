@@ -15,7 +15,7 @@ export default function PartnersSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Huollamme kaikki merkit</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Erikoistumme erityisesti BMW ja Mercedes-Benz merkkeihin, mutta huollamme ammattitaidolla kaikki automerkit
+            Palvelemme ammattitaidolla kaikkia automerkkejä
           </p>
         </div>
 

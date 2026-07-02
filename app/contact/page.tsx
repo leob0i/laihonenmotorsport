@@ -54,7 +54,7 @@ export default function ContactPage() {
       <section className="relative py-28 border-b border-border/50">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/0 via-primary to-primary/0" />
         <div className="container mx-auto px-4">
-          <p className="text-primary text-xs tracking-widest uppercase mb-4 font-display">Leon Korjaamo</p>
+          <p className="text-primary text-xs tracking-widest uppercase mb-4 font-display">JK Performance</p>
           <h1 className="font-display text-5xl md:text-7xl font-bold text-foreground tracking-tight uppercase">
             Ota yhteyttä
           </h1>
@@ -99,7 +99,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs tracking-widest uppercase text-muted-foreground mb-1">Sähköposti</p>
-                <p className="text-foreground">info@leonkorjaamo.fi</p>
+                <p className="text-foreground">info@jkperformance.fi</p>
               </div>
             </div>
 
