@@ -113,16 +113,8 @@ export default function Navigation() {
             </div>
 
             <Link
-              href="/meista"
+              href="/#yhteydenotto"
               className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-              onClick={(e) => e.preventDefault()}
-            >
-              Meista
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
-              onClick={(e) => e.preventDefault()}
             >
               Yhteystiedot
             </Link>
@@ -132,7 +124,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Button
               className="bg-transparent border border-primary text-primary hover:bg-primary hover:text-black px-8 py-5 text-xs tracking-widest uppercase transition-all duration-300"
-              onClick={() => {}}
+              onClick={() => window.location.href = "/#yhteydenotto"}
             >
               Varaa aika
             </Button>
@@ -193,16 +185,9 @@ export default function Navigation() {
               </div>
 
               <Link
-                href="/meista"
+                href="/#yhteydenotto"
                 className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={(e) => { e.preventDefault(); closeMenu() }}
-              >
-                Meista
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-4 py-4 text-lg tracking-wider uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
-                onClick={(e) => { e.preventDefault(); closeMenu() }}
+                onClick={closeMenu}
               >
                 Yhteystiedot
               </Link>
@@ -210,13 +195,13 @@ export default function Navigation() {
               <div className="px-4 pt-6 space-y-3">
                 <Button
                   className="w-full bg-primary hover:bg-primary-600 text-black font-semibold text-sm tracking-widest uppercase py-6"
-                  onClick={() => {}}
+                  onClick={() => window.location.href = "/#yhteydenotto"}
                 >
                   Varaa aika
                 </Button>
                 <Button
                   className="w-full bg-transparent border border-primary text-primary hover:bg-primary hover:text-black font-semibold text-sm tracking-widest uppercase py-6 transition-all duration-300"
-                  onClick={() => {}}
+                  onClick={() => window.location.href = "/#yhteydenotto"}
                 >
                   Soita
                 </Button>

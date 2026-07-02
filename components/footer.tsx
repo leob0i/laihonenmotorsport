@@ -45,7 +45,7 @@ export default function Footer() {
                 { name: "Palvelut", href: "/" },
                 { name: "Premium", href: "/" },
                 { name: "Meista", href: "/" },
-                { name: "Yhteystiedot", href: "/" },
+                { name: "Yhteystiedot", href: "/#yhteydenotto" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary text-sm transition-colors duration-300">
@@ -77,18 +77,18 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="font-display text-sm tracking-wider uppercase text-foreground mb-8">Yhteystiedot</h3>
-            <div className="space-y-5">
+            <Link href="/#yhteydenotto" className="block space-y-5 hover:opacity-80 transition-opacity duration-300">
               <div className="flex items-start gap-4">
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
-                <span className="text-muted-foreground text-sm">Korjaamokatu 1, 00100 Helsinki</span>
+                <span className="text-muted-foreground text-sm">Sulapuronkatu 4, 33700 Tampere</span>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground text-sm">+358 40 123 4567</span>
+                <span className="text-muted-foreground text-sm">0440766168</span>
               </div>
               <div className="flex items-center gap-4">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground text-sm">info@jkperformance.fi</span>
+                <span className="text-muted-foreground text-sm">jk-performance@outlook.com</span>
               </div>
               <div className="flex items-start gap-4">
                 <Clock className="w-4 h-4 text-primary mt-0.5" />
@@ -97,7 +97,7 @@ export default function Footer() {
                   <p>La: 9:00-14:00</p>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 

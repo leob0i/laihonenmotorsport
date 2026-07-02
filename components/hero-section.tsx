@@ -49,7 +49,9 @@ export default function HeroSection() {
     },
   ]
 
-  const handleCTAClick = (_cta: string) => {}
+  const handleCTAClick = (_cta: string) => {
+    window.location.href = "/#yhteydenotto"
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -122,7 +124,7 @@ export default function HeroSection() {
                     size="lg"
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10 hover:border-white font-medium px-10 py-6 text-sm tracking-wider uppercase"
-                    onClick={() => {}}
+                    onClick={() => window.location.href = "/#yhteydenotto"}
                   >
                     Ota yhteytta
                   </Button>

@@ -93,7 +93,7 @@ export default function TyommePage() {
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-sm tracking-widest uppercase"
-                  onClick={() => window.location.href = "/contact"}
+                  onClick={() => window.location.href = "/#yhteydenotto"}
                 >
                   Ota yhteyttä
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -212,7 +212,7 @@ export default function TyommePage() {
               <Button
                 size="lg"
                 className="bg-background text-foreground hover:bg-background/90 font-semibold px-8 h-14 text-sm tracking-widest uppercase"
-                onClick={() => window.location.href = "/contact"}
+                onClick={() => window.location.href = "/#yhteydenotto"}
               >
                 Ota yhteyttä
                 <ArrowRight className="ml-2 w-5 h-5" />

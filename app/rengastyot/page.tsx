@@ -99,7 +99,7 @@ export default function RengastyotPage() {
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 h-14 text-sm tracking-widest uppercase"
-                  onClick={() => window.location.href = "/contact"}
+                  onClick={() => window.location.href = "/#yhteydenotto"}
                 >
                   Varaa aika
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -108,7 +108,7 @@ export default function RengastyotPage() {
                   size="lg"
                   variant="outline"
                   className="border-border text-foreground hover:bg-card font-semibold px-8 h-14 text-sm tracking-widest uppercase"
-                  onClick={() => window.location.href = "tel:+358401234567"}
+                  onClick={() => window.location.href = "/#yhteydenotto"}
                 >
                   Soita meille
                 </Button>
@@ -162,7 +162,7 @@ export default function RengastyotPage() {
                     <p className="text-muted-foreground text-sm mb-6">{service.description}</p>
                     <Button
                       className="w-full bg-card border border-border hover:bg-primary hover:text-primary-foreground text-foreground transition-colors text-sm tracking-widest uppercase"
-                      onClick={() => window.location.href = "/contact"}
+                      onClick={() => window.location.href = "/#yhteydenotto"}
                     >
                       Kysy lisää
                     </Button>
@@ -218,7 +218,7 @@ export default function RengastyotPage() {
               <Button
                 size="lg"
                 className="bg-background text-foreground hover:bg-background/90 font-semibold px-8 h-14 text-sm tracking-widest uppercase"
-                onClick={() => window.location.href = "/contact"}
+                onClick={() => window.location.href = "/#yhteydenotto"}
               >
                 Varaa aika
                 <ArrowRight className="ml-2 w-5 h-5" />
